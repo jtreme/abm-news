@@ -52,6 +52,11 @@
 .job .d{font-size:15px;line-height:22px;color:#333;margin-top:4px}
 .job a{color:var(--red);font-weight:bold;text-decoration:none;font-size:14px;display:inline-block;margin-top:5px}
 .job .due{color:var(--red);font-weight:bold}
+.filters{display:flex;flex-wrap:wrap;gap:12px;background:var(--gray);border-left:6px solid var(--red);padding:14px 16px}
+.filters label{display:flex;flex-direction:column;font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);flex:1 1 200px}
+.filters select{margin-top:6px;font:16px Roboto,Arial,sans-serif;color:var(--text);padding:9px 10px;border:1px solid #bbb;border-radius:4px;background:#fff;width:100%}
+.count{font-size:14px;color:var(--muted);margin:10px 0 0}
+.empty{font-size:15px;color:var(--muted);margin-top:26px}
 </style>
 </head>
 <body>
@@ -68,10 +73,14 @@
     <div class="sub">Updated Nov. 3, 2026. Don&rsquo;t apply to just one: apply to more than one and give yourself options.</div>
   </div>
   <div class="body">
-    <p style="font-size:15px;margin:0 0 4px"><a href="#internships" style="color:#CC0000;font-weight:bold;text-decoration:none">Internships &rsaquo;</a> &nbsp;&middot;&nbsp; <a href="#jobs" style="color:#CC0000;font-weight:bold;text-decoration:none">Full-time jobs &rsaquo;</a></p>
-    <h2 id="internships" style="font-size:24px;margin:22px 0 0">Internships</h2>
-    <p style="font-size:14px;line-height:22px;margin:8px 0 0"><a href="#i-ag" style="color:#CC0000;font-weight:bold;text-decoration:none">Agriculture and food (29)</a> &nbsp;&middot;&nbsp; <a href="#i-sales" style="color:#CC0000;font-weight:bold;text-decoration:none">Sales and marketing (9)</a> &nbsp;&middot;&nbsp; <a href="#i-fin" style="color:#CC0000;font-weight:bold;text-decoration:none">Finance, banking, and accounting (15)</a> &nbsp;&middot;&nbsp; <a href="#i-ops" style="color:#CC0000;font-weight:bold;text-decoration:none">Operations and supply chain (2)</a> &nbsp;&middot;&nbsp; <a href="#i-pol" style="color:#CC0000;font-weight:bold;text-decoration:none">Policy and government (3)</a></p>
-    <div class="group" id="i-ag"><div class="q">Agriculture and food</div>
+    <div class="filters">
+      <label>Show<select id="f-type"><option value="all">Internships and jobs</option><option value="i">Internships</option><option value="j">Full-time jobs</option></select></label>
+      <label>Field<select id="f-cat"><option value="all">All fields</option><option value="ag">Agriculture and food</option><option value="sales">Sales and marketing</option><option value="fin">Finance, banking, and accounting</option><option value="ops">Operations and supply chain</option><option value="pol">Policy and government</option></select></label>
+    </div>
+    <p class="count" id="f-count"></p>
+    <section id="internships" data-type="i">
+    <h2 style="font-size:24px;margin:22px 0 0">Internships</h2>
+    <div class="group" id="i-ag" data-cat="ag"><div class="q">Agriculture and food</div>
       <div class="job"><div class="t">College Summer Intern</div><div class="m">Terra Green Precision Landscapes &middot; Concord, NC (Charlotte area)</div><div class="d">A paid summer internship rotating through landscape maintenance, construction, sales and client relationships, irrigation, and turf. Paid overtime and training. Requires a valid driver&rsquo;s license. Terra Green&rsquo;s team ran employer interviews with ABM students this fall.</div><a href="https://recruiting.paylocity.com/Recruiting/Jobs/Details/4529732">Apply at Terra Green &rsaquo;</a></div>
       <div class="job"><div class="t">Agri-Business Analytics Intern: Grain Logistics and Merchandising</div><div class="m">Mountaire Farms &middot; Millsboro, Delaware</div><div class="d">Grain logistics by truck, rail, and container, plus corn feed mill merchandising, with the grain team. Housing provided at a hotel in Rehoboth Beach. Sent to us by ABM alum Ashling Murphy.</div><a href="https://mountairejobs.com/#en/sites/Career-Site/jobs?keyword=intern&amp;mode=location">Apply at Mountaire &rsaquo;</a></div>
       <div class="job"><div class="t">Agri-Business Analytics Intern: Hedging and Risk Management</div><div class="m">Mountaire Farms &middot; Millsboro, Delaware</div><div class="d">Hedging, risk management, and market analysis on the hedge desk. Housing provided at a hotel in Rehoboth Beach. Sent to us by ABM alum Ashling Murphy.</div><a href="https://mountairejobs.com/#en/sites/Career-Site/jobs?keyword=intern&amp;mode=location">Apply at Mountaire &rsaquo;</a></div>
@@ -102,7 +111,7 @@
       <div class="job"><div class="t">Wholesale Banking Analyst Summer Intern</div><div class="m">Rabobank &middot; Chicago</div><div class="d">For juniors. Food and agribusiness corporate banking team, $49.50 an hour. Posted deadline was Nov. 1, but the listing says resumes are accepted until the pool is filled.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Rabobank%20Wholesale%20Banking%20Analyst%20Summer%20Intern&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Summer Analyst</div><div class="m">Tiverton &middot; Raleigh</div><div class="d">An investment firm focused on agriculture.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Tiverton%20Summer%20Analyst&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
-    <div class="group" id="i-sales"><div class="q">Sales and marketing</div>
+    <div class="group" id="i-sales" data-cat="sales"><div class="q">Sales and marketing</div>
       <div class="job"><div class="t">Sales Intern, Summer 2027 (East Coast)</div><div class="m">FedEx &middot; Raleigh</div><div class="d">Summer 2027 sales internship.</div><a href="https://www.linkedin.com/jobs/search/?keywords=FedEx%20Sales%20Intern%20Summer%202027%20East%20Coast&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Sales Intern</div><div class="m">Pepsi Bottling Ventures &middot; Raleigh, Wilmington, Harrisburg, or Winston-Salem</div><div class="d">Beverage sales internship, posted in several NC cities.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Pepsi%20Bottling%20Ventures%20Sales%20Intern&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Sales Development Intern, Summer 2027</div><div class="m">Siemens &middot; Raleigh</div><div class="d">Summer 2027 sales development internship.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Siemens%20Sales%20Development%20Intern%20Summer%202027&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
@@ -113,7 +122,7 @@
       <div class="job"><div class="t">Sales Internships, Summer 2027</div><div class="m">Inmar Intelligence &middot; Winston-Salem</div><div class="d">Summer 2027 sales internships.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Inmar%20Intelligence%20Sales%20Internships%20Summer%202027&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Sales Intern, Summer 2027 (Paid)</div><div class="m">Crown Equipment Corporation &middot; Colfax</div><div class="d">Paid summer 2027 equipment sales internship.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Crown%20Equipment%20Sales%20Intern%20Summer%202027&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
-    <div class="group" id="i-fin"><div class="q">Finance, banking, and accounting</div>
+    <div class="group" id="i-fin" data-cat="fin"><div class="q">Finance, banking, and accounting</div>
       <div class="job"><div class="t">2027 Summer Intern, General Bank/Business Risk and Controls</div><div class="m">First Citizens Bank &middot; Raleigh</div><div class="d">Summer 2027 internship for students leaning toward finance.</div><a href="https://jobs.firstcitizens.com/jobs/35783?lang=en-us">Apply &rsaquo;</a></div>
       <div class="job"><div class="t">2027 Summer Intern, General Accounting/Financial Controls</div><div class="m">First Citizens Bank &middot; Raleigh</div><div class="d">Summer 2027 internship for students leaning toward accounting.</div><a href="https://jobs.firstcitizens.com/jobs/36128?lang=en-us">Apply &rsaquo;</a></div>
       <div class="job"><div class="t">2027 Summer Intern, Commercial Bank Credit</div><div class="m">First Citizens Bank &middot; Raleigh</div><div class="d">Summer 2027 credit internship in commercial banking.</div><a href="https://www.linkedin.com/jobs/search/?keywords=First%20Citizens%202027%20Summer%20Intern%20Commercial%20Bank%20Credit&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
@@ -130,20 +139,21 @@
       <div class="job"><div class="t">2027 Client Portfolio Management Summer Internship</div><div class="m">Barings &middot; Charlotte</div><div class="d">Summer 2027 investment internship.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Barings%202027%20Client%20Portfolio%20Management%20Summer%20Internship&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">2027 Capital Markets, Quantitative Technology Services Summer</div><div class="m">RBC &middot; Raleigh</div><div class="d">Summer 2027 internship for students with quantitative and tech skills.</div><a href="https://www.linkedin.com/jobs/search/?keywords=RBC%202027%20Capital%20Markets%20Quantitative%20Technology%20Services%20Raleigh&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
-    <div class="group" id="i-ops"><div class="q">Operations and supply chain</div>
+    <div class="group" id="i-ops" data-cat="ops"><div class="q">Operations and supply chain</div>
       <div class="job"><div class="t">Intern, Production (Summer 2027)</div><div class="m">Martin Marietta &middot; Raleigh</div><div class="d">Summer 2027 production internship with a building materials company.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Martin%20Marietta%20Intern%20Production%20Summer%202027&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Summer 2027 Internship, Production</div><div class="m">BWE &middot; Charlotte</div><div class="d">Summer 2027 production internship.</div><a href="https://www.linkedin.com/jobs/search/?keywords=BWE%20Summer%202027%20Internship%20Production%20Charlotte&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
-    <div class="group" id="i-pol"><div class="q">Policy and government</div>
+    <div class="group" id="i-pol" data-cat="pol"><div class="q">Policy and government</div>
       <div class="job"><div class="t">Helms/OSM Policy Scholarship</div><div class="m">Congressional office &middot; Washington, D.C.</div><div class="d">Paid summer internship with a $5,000 stipend, working on national ag policy. Application, three short essays, and two letters. <span class="due">Deadline: Dec. 1</span></div><a href="http://go.ncsu.edu/helms-internship">Apply &rsaquo;</a></div>
       <div class="job"><div class="t">Spring 2027 Policy Intern</div><div class="m">Torrey Advisory Group &middot; Washington, D.C.</div><div class="d">Paid internship with a Capitol Hill lobbying firm focused on food and agriculture. Email one document (resume, cover letter, writing sample up to three pages, references) to elambert@torreydc.com. <span class="due">Deadline: Nov. 6</span></div><a href="mailto:elambert@torreydc.com?subject=Spring%202027%20Policy%20Intern%20Application">Email your application &rsaquo;</a></div>
       <div class="job"><div class="t">Economics Student Trainee</div><div class="m">USDA Economic Research Service &middot; Remote</div><div class="d">Unpaid. Help build the federal SNAP Policy Database, 8 to 20 hours a week for at least 90 days. Excel and Stata help. <span class="due">Deadline: Nov. 5</span></div><a href="https://www.usajobs.gov/job/889896400">Apply &rsaquo;</a></div>
     </div>
 
-    <h2 id="jobs" style="font-size:24px;margin:40px 0 0;padding-top:20px;border-top:3px solid #CC0000">Full-time jobs</h2>
+    </section>
+    <section id="jobs" data-type="j">
+    <h2 style="font-size:24px;margin:40px 0 0;padding-top:20px;border-top:3px solid #CC0000">Full-time jobs</h2>
     <p>For seniors graduating in December or May. Some postings ask for a year or two of experience, so read the qualifications, but apply if you&rsquo;re close.</p>
-    <p style="font-size:14px;line-height:22px;margin:8px 0 0"><a href="#j-ag" style="color:#CC0000;font-weight:bold;text-decoration:none">Agriculture and food (13)</a> &nbsp;&middot;&nbsp; <a href="#j-fin" style="color:#CC0000;font-weight:bold;text-decoration:none">Finance, banking, and accounting (2)</a></p>
-    <div class="group" id="j-ag"><div class="q">Agriculture and food</div>
+    <div class="group" id="j-ag" data-cat="ag"><div class="q">Agriculture and food</div>
       <div class="job"><div class="t">Veg Seed Sales Rep (NC/SC)</div><div class="m">Seedway &middot; Raleigh</div><div class="d">Vegetable seed sales across North and South Carolina.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Seedway%20Veg%20Seed%20Sales%20Rep%20NC%20SC&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Field Sales Representative</div><div class="m">FMC Corporation &middot; North Carolina (remote)</div><div class="d">Field sales for a crop protection company.</div><a href="https://www.linkedin.com/jobs/search/?keywords=FMC%20Field%20Sales%20Representative&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Customer Account Specialist</div><div class="m">Syngenta &middot; Greensboro (hybrid)</div><div class="d">Customer account role with a seed and crop protection company.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Syngenta%20Customer%20Account%20Specialist&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
@@ -158,11 +168,12 @@
       <div class="job"><div class="t">Business Manager, Grain Procurement</div><div class="m">Smithfield Foods &middot; Edenton</div><div class="d">Grain buying and procurement for a major pork producer.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Smithfield%20Business%20Manager%20Grain%20Procurement&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Agricultural Logistics Coordinator</div><div class="m">Biltmore &middot; Asheville</div><div class="d">Full-time logistics role in Biltmore&rsquo;s agricultural operations.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Biltmore%20Agricultural%20Logistics%20Coordinator&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
-    <div class="group" id="j-fin"><div class="q">Finance, banking, and accounting</div>
+    <div class="group" id="j-fin" data-cat="fin"><div class="q">Finance, banking, and accounting</div>
       <div class="job"><div class="t">Banker Associate, Commercial Banking</div><div class="m">JPMorganChase &middot; Raleigh</div><div class="d">Entry-level commercial banking associate role.</div><a href="https://www.linkedin.com/jobs/search/?keywords=JPMorganChase%20Banker%20Associate%20Commercial%20Banking%20Raleigh&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
       <div class="job"><div class="t">Commercial Lending Program Associate</div><div class="m">Self-Help Credit Union &middot; Raleigh-Durham-Chapel Hill area</div><div class="d">Commercial lending program role with a community development lender.</div><a href="https://www.linkedin.com/jobs/search/?keywords=Self-Help%20Credit%20Union%20Commercial%20Lending%20Program%20Associate&location=North%20Carolina%2C%20United%20States">Find on LinkedIn &rsaquo;</a></div>
     </div>
 
+    </section>
     <p style="margin-top:26px;font-size:14px;color:#555">&ldquo;Find on LinkedIn&rdquo; opens a LinkedIn search for that posting. Postings can close without notice, so check the listing before you apply.</p>
     <div class="footer">
       <b>Know of an internship or job?</b>
@@ -171,5 +182,25 @@
     <a class="back" href="https://jtreme.github.io/abm-news/">&lsaquo; All issues</a>
   </div>
 </div>
+<script>
+(function(){
+  var t=document.getElementById('f-type'),c=document.getElementById('f-cat'),n=document.getElementById('f-count');
+  var secs=[].slice.call(document.querySelectorAll('section[data-type]'));
+  function run(){
+    var total=0;
+    secs.forEach(function(s){
+      var on=t.value==='all'||t.value===s.dataset.type,shown=0;
+      [].slice.call(s.querySelectorAll('.group')).forEach(function(g){
+        var v=on&&(c.value==='all'||c.value===g.dataset.cat);
+        g.style.display=v?'':'none'; if(v) shown+=g.querySelectorAll('.job').length;
+      });
+      s.style.display=shown?'':'none'; total+=shown;
+    });
+    n.textContent=total?('Showing '+total+(total===1?' posting':' postings')):'Nothing open in that field right now. Check back, or pick another field.';
+  }
+  var hs=location.hash.slice(1);if(hs==='internships')t.value='i';if(hs==='jobs')t.value='j';
+  t.addEventListener('change',run);c.addEventListener('change',run);run();
+})();
+</script>
 </body>
 </html>

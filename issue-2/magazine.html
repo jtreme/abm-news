@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The ABM Drop, Issue 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#CC0000;--ink:#1a1a1a;--paper:#f7f5f0;--muted:#666;--rule:#cfcbc2;--slate:#1f2427}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Roboto,Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.serif{font-family:"Roboto Slab",Georgia,serif}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.brick{background:#fff}
+.brick .wrap{padding-top:12px;padding-bottom:10px}
+.brick img{display:block;height:34px;width:auto}
+.top{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:16px}
+.mast{padding:30px 0 18px;border-bottom:4px solid var(--ink)}
+.masthead{font-family:"Roboto Slab",Georgia,serif;font-weight:800;font-size:clamp(54px,10vw,132px);line-height:1;letter-spacing:-.04em;margin:10px 0 0;white-space:nowrap}
+.masthead span{color:var(--red)}
+.mastfoot{display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted);margin-top:12px;letter-spacing:.06em;text-transform:uppercase}
+.nav{display:flex;gap:28px;overflow-x:auto;white-space:nowrap;padding:15px 0;border-bottom:1px solid var(--rule);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nav a:hover{color:var(--red)}
+.nav a.on{color:var(--red)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:0;margin:28px 0 0;background:var(--red);color:#fff}
+.hero .txt{padding:40px 40px 38px}
+.hero .kicker{color:#fff;opacity:.9}
+.hero h1{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(40px,5.4vw,72px);line-height:1.02;letter-spacing:-.035em;margin:16px 0 18px}
+.hero p{font-size:18px;line-height:1.55;max-width:540px;margin:0 0 10px}
+.btn{display:inline-block;background:#fff;color:var(--red);font-weight:900;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:15px 22px;margin-top:16px}
+.btn:hover{background:var(--ink);color:#fff}
+.facts{background:#a80000;padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.fact{border-top:1px solid rgba(255,255,255,.35);padding:13px 0}
+.fact:first-child{border-top:0;padding-top:0}
+.fact b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+.fact span{font-size:17px;line-height:1.4}
+/* dates */
+.dates{margin:44px 0 0;border-top:3px solid var(--ink);border-bottom:1px solid var(--rule);padding:22px 0 26px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:20px}
+.head h2{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;margin:0}
+.head small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.dgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.d{padding:6px 20px;border-left:1px solid var(--rule);display:flex;flex-direction:column;align-items:flex-start}
+.d:first-child{border-left:0;padding-left:0}
+.d .n{font-family:"Roboto Slab",Georgia,serif;font-size:56px;font-weight:800;line-height:1;letter-spacing:-.05em}
+.d .m{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--red);margin:4px 0 12px}
+.d h3{font-size:16px;line-height:1.3;margin:0 0 6px}
+.d p{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 12px}
+.d a.act{margin-top:auto;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid var(--red);padding-bottom:3px}
+.d a.act:hover{color:var(--red)}
+.more{font-size:13px;color:var(--muted);margin-top:20px;line-height:1.7}
+.more b{color:var(--ink)}
+/* sections */
+.st{display:flex;justify-content:space-between;align-items:end;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin:56px 0 24px}
+.st h2{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(30px,4vw,40px);letter-spacing:-.03em;margin:0}
+.st small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.ph{display:block;overflow:hidden;background:#ddd}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+a:hover .ph img{transform:scale(1.03)}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.feature .ph{height:560px}
+.feature h3{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(34px,4.2vw,54px);line-height:1.04;letter-spacing:-.035em;margin:14px 0 16px}
+.feature p{font-size:17px;line-height:1.6;color:#444;margin:0 0 12px}
+.quote{border-left:5px solid var(--red);padding:4px 0 4px 18px;margin:20px 0;font-family:"Roboto Slab",Georgia,serif;font-size:21px;line-height:1.4}
+.quote small{display:block;font-family:Roboto,Arial,sans-serif;font-size:13px;color:var(--muted);margin-top:8px}
+.read{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--red);padding-bottom:3px;margin-top:6px}
+a:hover .read,.read:hover{color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:34px}
+.card .ph{height:250px}
+.card h3{font-family:"Roboto Slab",Georgia,serif;font-size:26px;line-height:1.12;letter-spacing:-.025em;margin:10px 0 8px}
+.card p{font-size:14px;line-height:1.6;color:#555;margin:0 0 10px}
+.card .kicker{margin-top:16px}
+/* dark band */
+.dark{background:var(--slate);color:#fff;margin-top:64px;padding:46px 0 52px}
+.dark .st{border-color:#7b858a;margin-top:0}
+.dark .st small{color:#bcc3c5}
+.opps{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.big{background:var(--red);padding:30px;display:flex;flex-direction:column}
+.big .kicker{color:#fff;opacity:.9}
+.big h3{font-family:"Roboto Slab",Georgia,serif;font-size:36px;line-height:1.08;letter-spacing:-.03em;margin:12px 0}
+.big p{font-size:16px;line-height:1.55;margin:0 0 6px}
+.big .btn{align-self:flex-start;margin-top:auto}
+.list{border:1px solid #5d676c;padding:22px 26px}
+.list .kicker{color:#ff8a8a}
+.pick{display:block;border-top:1px solid #4a5357;padding:12px 0}
+.pick:first-of-type{border-top:0}
+.pick b{display:block;font-size:16px}
+.pick span{display:block;font-size:13px;color:#c3c9ca;margin-top:3px}
+.pick em{font-style:normal;color:#ff8a8a;font-weight:700}
+.pick:hover b{text-decoration:underline}
+/* noticeboard */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.note{background:#fff;border-top:4px solid var(--red);padding:22px 22px 24px}
+.note h3{font-family:"Roboto Slab",Georgia,serif;font-size:23px;line-height:1.15;margin:10px 0 8px}
+.note p{font-size:14px;line-height:1.6;color:#555;margin:0 0 12px}
+footer{border-top:4px solid var(--ink);margin-top:60px;padding:30px 0 56px;display:flex;justify-content:space-between;gap:24px}
+footer strong{font-family:"Roboto Slab",Georgia,serif;font-size:30px}
+footer p{font-size:14px;line-height:1.6;color:var(--muted);margin:6px 0 0}
+footer a{color:var(--red);font-weight:700}
+@media(max-width:820px){
+  .wrap{padding:0 18px}
+  .top .r{display:none}
+  .hero,.feature,.opps{grid-template-columns:1fr}
+  .hero .txt{padding:30px 22px}
+  .facts{padding:24px 22px}
+  .dgrid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}
+  .d:nth-child(3){border-left:0;padding-left:0}
+  .feature .ph{height:420px}
+  .cards,.notes{grid-template-columns:1fr}
+  .card .ph{height:240px}
+  .head,.st{flex-direction:column;align-items:flex-start;gap:6px}
+  .mastfoot{font-size:10px}
+  .mast{padding:22px 18px 16px}
+  .mastfoot span+span{display:none}
+  footer{display:block}
+}
+@media(max-width:420px){.d{padding:6px 12px}.d .n{font-size:46px}.masthead{font-size:13.5vw}}
+</style>
+</head>
+<body>
+<div class="brick"><div class="wrap"><a href="https://www.ncsu.edu/"><img src="../issue-1/img/brick.png" alt="NC State University"></a></div></div>
+<div class="top"><div class="wrap"><span>NC State &middot; Agricultural Business Management</span><span class="r">Issue 2 &middot; November 3, 2026</span></div></div>
+
+<header class="wrap mast">
+  <div class="kicker">The stories. The people. The possibilities.</div>
+  <div class="masthead">The ABM Drop<span>.</span></div>
+  <div class="mastfoot"><span>Issue 2 &middot; Tuesday, November 3, 2026</span><span>The newsletter for ABM students</span></div>
+</header>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="on" href="#competition">The latest</a>
+    <a href="#dates">Dates that matter</a>
+    <a href="#people">People</a>
+    <a href="#action">ABM in action</a>
+    <a href="#next">Your next move</a>
+    <a href="#notes">Noticeboard</a>
+    <a href="../">All issues</a>
+  </nav>
+
+  <section class="hero" id="competition">
+    <div class="txt">
+      <div class="kicker">Don&rsquo;t miss this &middot; Friday, Nov. 13</div>
+      <h1>15 minutes.<br>One big impression.</h1>
+      <p>The first ABM Interview Competition. Practice the interview before the one that counts, and win something for it.</p>
+      <p>Round 1 is 15 minutes with ABM faculty and staff judges. Finalists face company recruiters.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfH1kBCSXOj8wWLsZAKHYUxGNHT-tmGosktN_WzH8lZBg_nDw/viewform" target="_blank" rel="noopener">Sign up by Thu., Nov. 5 &rsaquo;</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>When and where</b><span>Friday, Nov. 13, 10 a.m.&ndash;3 p.m. Check in at Nelson 3313. Pick your time when you sign up.</span></div>
+      <div class="fact"><b>Two divisions</b><span>Freshmen and sophomores. Juniors and seniors. Prizes for each winner, and something for every finalist.</span></div>
+      <div class="fact"><b>Bring</b><span>A printed resume.</span></div>
+      <div class="fact"><b>Questions</b><span>Matt Smith, <a href="mailto:mgsmit25@ncsu.edu" style="text-decoration:underline">mgsmit25@ncsu.edu</a></span></div>
+    </div>
+  </section>
+
+  <section class="dates" id="dates">
+    <div class="head"><h2>Dates that matter.</h2><small>Mark your calendar. Take action.</small></div>
+    <div class="dgrid">
+      <article class="d"><div class="n">04</div><div class="m">NOV &middot; DEADLINE</div><h3>Harvest Ball registration</h3><p>Free agribusiness summit, panels, and gala in Raleigh, Nov. 6&ndash;8.</p><a class="act" href="https://www.farmersoutreach.org/new-page" target="_blank" rel="noopener">Register &rsaquo;</a></article>
+      <article class="d"><div class="n">05</div><div class="m">NOV &middot; 5 P.M.</div><h3>Interview Competition sign-up</h3><p>Pick your time slot for Nov. 13.</p><a class="act" href="https://docs.google.com/forms/d/e/1FAIpQLSfH1kBCSXOj8wWLsZAKHYUxGNHT-tmGosktN_WzH8lZBg_nDw/viewform" target="_blank" rel="noopener">Sign up &rsaquo;</a></article>
+      <article class="d"><div class="n">06</div><div class="m">NOV &middot; DEADLINE</div><h3>UTA applications</h3><p>Help other students through a class you&rsquo;ve taken.</p><a class="act" href="https://docs.google.com/forms/d/14N1MlV3MVDNqoB9rtFS-jl3ryymCbe0JO7kfYe9gNio/viewform" target="_blank" rel="noopener">Apply &rsaquo;</a></article>
+      <article class="d"><div class="n">13</div><div class="m">NOV &middot; EVENT</div><h3>ABM Interview Competition</h3><p>10 a.m.&ndash;3 p.m. Check in at Nelson 3313.</p><a class="act" href="#competition">Details &rsaquo;</a></article>
+    </div>
+    <div class="more"><b>Also coming up:</b> Nov. 5, USDA Economic Research Service internship &middot; Nov. 6, Torrey Advisory Group internship &middot; Nov. 6, Lunch with Dr. Treme &middot; Dec. 1, Helms/OSM Policy Scholarship &middot; Jan. 12, NC State Extension internship</div>
+  </section>
+
+  <section id="people">
+    <div class="st"><h2>People worth knowing.</h2><small>Meet your people</small></div>
+    <a class="feature" href="peyton-sharp/">
+      <span class="ph"><img src="img/peyton-sharp.jpg" alt="Peyton Sharp in the courtroom of the Supreme Court of North Carolina" style="object-position:50% 35%"></span>
+      <div>
+        <div class="kicker">The unexpected path</div>
+        <h3>From ABM to the North Carolina Supreme Court.</h3>
+        <p>Last spring, senior Peyton Sharp worked in Justice Trey Allen&rsquo;s chambers at the state&rsquo;s highest court, drafting petitions, researching cases, and sitting in on oral arguments. She found it through a LinkedIn post, then wrote to every justice to ask about openings.</p>
+        <div class="quote">&ldquo;You do not have to know everything or have the perfect resume to be deserving of an opportunity.&rdquo;<small>Peyton Sharp, ABM &rsquo;27</small></div>
+        <span class="read">Read Peyton&rsquo;s story &rsaquo;</span>
+      </div>
+    </a>
+
+    <div class="cards">
+      <a class="card" href="https://farmfoundation.org/2026/10/27/meet-the-january-2027-cultivators/" target="_blank" rel="noopener">
+        <span class="ph"><img src="img/grid-brandon.jpg" alt="Brandon Estevez" style="object-position:50% 35%"></span>
+        <div class="kicker">First-year honor</div>
+        <h3>One of eight nationwide.</h3>
+        <p>First-year Brandon Estevez was chosen as a Farm Foundation Cultivator, which is rare for a first-year. He&rsquo;ll present his avocado supply chain research to agribusiness and policy leaders in January.</p>
+        <span class="read">Meet the Cultivators &rsaquo;</span>
+      </a>
+      <a class="card" href="sales-workshop/">
+        <span class="ph"><img src="img/sales-workshop.jpg" alt="Professional selling workshop students" style="object-position:40% 50%"></span>
+        <div class="kicker">Professional selling workshop</div>
+        <h3>45 students. Real agribusiness judges.</h3>
+        <p>In its seventh year, the workshop led by Aaron Messer of Bayer Crop Science ended with sales pitches. &ldquo;The most beneficial experience I have had at NC State,&rdquo; said Aimee Dearinger.</p>
+        <span class="read">Read the story &rsaquo;</span>
+      </a>
+      <a class="card" href="terra-green/">
+        <span class="ph"><img src="img/grid-terragreen.jpg" alt="Terra Green Precision Landscapes logo"></span>
+        <div class="kicker">Employer interviews</div>
+        <h3>Across the table from Terra Green.</h3>
+        <p>Eighteen students, freshmen to seniors, practiced interviewing with PJ Faust, Brandon &ldquo;Brew&rdquo; Brewington, and ABM alumnus John Andrews of Terra Green Precision Landscapes.</p>
+        <span class="read">Read Matt Smith&rsquo;s story &rsaquo;</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="action">
+    <div class="st"><h2>Beyond the classroom.</h2><small>ABM in action</small></div>
+    <div class="cards" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0">
+      <a class="card" href="blue-economy/">
+        <span class="ph" style="height:340px"><img src="img/beip.jpg" alt="Wade McCallum, Lindsey Hockstra, Dr. Amit Sawant, and Meredith Newton" style="object-position:50% 60%"></span>
+        <div class="kicker">Blue Economy Innovation Program</div>
+        <h3>A new pitch for North Carolina oysters.</h3>
+        <p>Lindsey Hockstra, Wade McCallum, and Meredith Newton pitched a marketing cooperative for NC oysters at the free workshop in Morehead City.</p>
+        <span class="read">Read the story &rsaquo;</span>
+      </a>
+      <a class="card" href="grads-to-golf/">
+        <span class="ph" style="height:340px"><img src="img/grid-golf.jpg" alt="Grads to Golf participants" style="object-position:50% 60%"></span>
+        <div class="kicker">Grads to Golf</div>
+        <h3>Learning the business of golf.</h3>
+        <p>ABM women learned golf skills and how to build professional relationships on the course, through a five-week program from the LPGA Foundation and John Deere.</p>
+        <span class="read">Read Lindsey&rsquo;s story &rsaquo;</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<section class="dark" id="next">
+  <div class="wrap">
+    <div class="st"><h2>Your next move.</h2><small>Don&rsquo;t apply to just one</small></div>
+    <div class="opps">
+      <div class="big">
+        <div class="kicker">Apply now</div>
+        <h3>Every open internship and job, in one place.</h3>
+        <p>Agriculture and food, sales and marketing, finance and accounting, operations, and policy. Filter by field and find your next move.</p>
+        <a class="btn" href="../internships/">See all internships and jobs &rsaquo;</a>
+      </div>
+      <div class="list">
+        <div class="kicker">Six to apply for now</div>
+        <a class="pick" href="https://careerpathways.ces.ncsu.edu/" target="_blank" rel="noopener"><b>NC State Extension, summer 2027</b><span>$6,400 for 10 weeks with county agents. ePack ID 230072. <em>Due Jan. 12</em></span></a>
+        <a class="pick" href="http://go.ncsu.edu/helms-internship" target="_blank" rel="noopener"><b>Helms/OSM Policy Scholarship, Washington, D.C.</b><span>A paid summer in a congressional office. <em>Due Dec. 1</em></span></a>
+        <a class="pick" href="mailto:elambert@torreydc.com?subject=Spring%202027%20Policy%20Intern%20Application"><b>Torrey Advisory Group, Washington, D.C.</b><span>Paid spring 2027 food and ag policy internship. <em>Due Nov. 6</em></span></a>
+        <a class="pick" href="https://www.usajobs.gov/job/889896400" target="_blank" rel="noopener"><b>USDA Economic Research Service, remote</b><span>Unpaid economics internship on the SNAP Policy Database. <em>Due Nov. 5</em></span></a>
+        <a class="pick" href="https://jobs.firstcitizens.com/jobs/35783?lang=en-us" target="_blank" rel="noopener"><b>First Citizens Bank, Raleigh: Risk and Controls</b><span>Summer 2027, for students leaning toward finance.</span></a>
+        <a class="pick" href="https://jobs.firstcitizens.com/jobs/36128?lang=en-us" target="_blank" rel="noopener"><b>First Citizens Bank, Raleigh: Accounting</b><span>Summer 2027, for students leaning toward accounting.</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section id="notes">
+    <div class="st"><h2>The noticeboard.</h2><small>Small items, big use</small></div>
+    <div class="notes">
+      <a class="note" href="https://docs.google.com/forms/d/1vUqtrJQBqOl7Quh0-9_GUTSvoiBN3Xo75RLdd7KfW7A/viewform" target="_blank" rel="noopener"><div class="kicker">Your call &middot; Fri., Nov. 6</div><h3>Lunch with Dr. Treme.</h3><p>Noon to 1 with two other ABM students. Bring an idea, a question, or just come to talk. Lunch is on us. Three spots.</p><span class="read">Sign up &rsaquo;</span></a>
+      <div class="note"><div class="kicker">Good to know</div><h3>Take ARE 301 before ARE 336.</h3><p>Students who finish 301 first come into 336 better prepared, with the concepts and math practice 301 gives them.</p></div>
+      <a class="note" href="https://www.instagram.com/ncstateabm/" target="_blank" rel="noopener"><div class="kicker">Stay in the loop</div><h3>Follow @ncstateabm.</h3><p>The photos, the people, and what&rsquo;s happening around the major.</p><span class="read">Instagram &rsaquo;</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div><strong>That&rsquo;s the Drop.</strong><p>NC State Agricultural Business Management</p></div>
+    <div><p>Every issue and every full story: <a href="https://go.ncsu.edu/abm-news">go.ncsu.edu/abm-news</a></p><p>Got a photo, a win, or a tip for the next issue? Send it to Matt Smith, <a href="mailto:mgsmit25@ncsu.edu">mgsmit25@ncsu.edu</a></p></div>
+  </footer>
+</div>
+</body>
+</html>

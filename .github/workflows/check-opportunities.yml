@@ -1,0 +1,39 @@
+name: Check opportunities page
+
+on:
+  schedule:
+    - cron: '17 12 */3 * *'   # about 7 a.m. Eastern every third day
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check links and dates
+        id: check
+        run: python .github/scripts/check_opportunities.py >> "$GITHUB_OUTPUT"
+      - name: Report as a GitHub issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROBLEMS: ${{ steps.check.outputs.problems }}
+        run: |
+          gh label create opportunities-check --color CC0000 --description "Scheduled opportunities page check" 2>/dev/null || true
+          num=$(gh issue list --label opportunities-check --state open --json number --jq '.[0].number // empty')
+          if [ "${PROBLEMS:-0}" -gt 0 ]; then
+            if [ -n "$num" ]; then
+              gh issue comment "$num" --body-file report.md
+            else
+              gh issue create --title "Opportunities page: postings to review" --label opportunities-check --assignee jtreme --body-file report.md
+            fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "$(cat report.md)"
+          fi

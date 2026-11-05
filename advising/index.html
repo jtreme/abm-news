@@ -54,6 +54,11 @@
   .sec{font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin:30px 0 4px}
   .todo{background:#fff3cd;border-left:4px solid #e0a800;padding:2px 6px;font-size:14px}
   .ask{background:var(--gray);border-left:6px solid var(--red);padding:14px 18px;margin-top:30px;font-size:15px;line-height:22px}
+  .ql{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0 6px}
+  .ql a{display:block;background:var(--gray);border-left:4px solid var(--red);padding:10px 12px;font-size:14px;line-height:19px;font-weight:bold;color:var(--black);text-decoration:none}
+  .ql a:hover{background:#e9e9e9}
+  .ql a small{display:block;font-weight:normal;color:var(--muted);font-size:12px;margin-top:2px}
+  @media(max-width:600px){.ql{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -71,6 +76,14 @@
     <div class="sub">Quick answers to common questions about courses, math, transfer credit, and more. Tap a question to open it.</div>
   </div>
   <div class="body">
+    <h2 style="margin-top:4px">Quick links</h2>
+    <div class="sec">Plan your degree</div>
+    <div class="ql"><a href="https://mypack.ncsu.edu/" target="_blank" rel="noopener">MyPack Portal<small>Registration, degree audit, records</small></a><a href="https://catalog.ncsu.edu/undergraduate/agriculture-life-sciences/agricultural-resource-economics/agricultural-business-management-bs" target="_blank" rel="noopener">ABM degree requirements<small>Official course list in the catalog</small></a><a href="https://studentservices.ncsu.edu/your-degree/degree-planning/degree-audit" target="_blank" rel="noopener">Degree audit help<small>How to run and read it</small></a><a href="https://studentservices.ncsu.edu/calendars/academic-calendar/" target="_blank" rel="noopener">Academic calendar<small>Registration, drop, and exam dates</small></a><a href="https://studentservices.ncsu.edu/academics/courses/course-registration/schedule-revision-requests/" target="_blank" rel="noopener">Schedule revision requests<small>Late adds, drops, and changes</small></a><a href="https://transfer.ncsu.edu/transfer-credit-evaluation/" target="_blank" rel="noopener">Transfer credit<small>Look up how a course transfers</small></a><a href="https://catalog.ncsu.edu/undergraduate/agriculture-life-sciences/agricultural-resource-economics/agricultural-business-management-minor" target="_blank" rel="noopener">Agricultural Business Management minor<small>For non-ABM majors</small></a><a href="https://catalog.ncsu.edu/undergraduate/agriculture-life-sciences/agricultural-resource-economics/agricultural-entrepreneurship-minor/" target="_blank" rel="noopener">Agricultural Entrepreneurship minor<small>Requirements in the catalog</small></a></div>
+    <div class="sec">Get support</div>
+    <div class="ql"><a href="https://catalog.ncsu.edu/about/student-services/academic-success-center" target="_blank" rel="noopener">Academic Success Center<small>Tutoring and study help</small></a><a href="https://careers.dasa.ncsu.edu/" target="_blank" rel="noopener">Career Development Center<small>Resumes, interviews, ePACK</small></a><a href="https://studentservices.ncsu.edu/finances/scholarships-and-financial-aid/types-of-financial-aid/scholarships/" target="_blank" rel="noopener">Scholarships and financial aid<small>PACK ASSIST and aid</small></a></div>
+    <div class="sec">Get experience</div>
+    <div class="ql"><a href="../internships/">Internships, jobs, and programs<small>The ABM opportunities page</small></a><a href="https://studyabroad.ncsu.edu/" target="_blank" rel="noopener">Study abroad<small>Programs and deadlines</small></a><a href="https://undergradresearch.dasa.ncsu.edu/" target="_blank" rel="noopener">Undergraduate research<small>Projects and funding</small></a></div>
+    <h2 style="margin-top:34px">Common questions</h2>
     <div class="sec">Courses and order</div>
     <details><summary>Should I take ARE 301 before ARE 336?</summary><p>Yes. Take ARE 301 first. Students who finish 301 before 336 come into 336 better prepared, with the concepts and math practice 301 gives them.</p></details>
     <details><summary>Can I take EC 301 (or another Poole course) instead of the ARE course?</summary><p>Take the ARE course. When an ARE course and a Poole College of Management course fill the same requirement, ABM students should take the ARE one, for example ARE 301, not EC 301.</p></details>

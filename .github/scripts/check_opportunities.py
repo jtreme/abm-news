@@ -88,7 +88,11 @@ def check(url):
         "Accept": "text/html,application/xhtml+xml,*/*"})
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
-            body = r.read(400_000).decode("utf-8", "ignore").lower()
+            body = r.read(600_000).decode("utf-8", "ignore")
+            # Match only visible text: drop scripts, styles, templates, and tags.
+            body = re.sub(r"(?is)<(script|style|template|noscript)[^>]*>.*?</\1>", " ", body)
+            body = html.unescape(re.sub(r"(?s)<[^>]+>", " ", body)).lower()
+            body = " ".join(body.split())
             for phrase in CLOSED_TEXT:
                 if phrase in body:
                     return "closed", f'page says "{phrase}"'

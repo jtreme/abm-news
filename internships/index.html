@@ -71,12 +71,12 @@
   <div class="masthead">
     <div class="eyebrow">NC State Agricultural Business Management</div>
     <div class="brand"><a href="https://jtreme.github.io/abm-news/">The ABM Drop</a></div>
-    <div class="issue">Internships, jobs, programs, and scholarships</div>
+    <div class="issue">Opportunities for ABM students</div>
   </div>
   <div class="band">
     <div class="label">Apply now</div>
-    <h1>Internships, jobs, programs, scholarships, and ag organizations for ABM students</h1>
-    <div class="sub">Updated Nov. 3, 2026. Don&rsquo;t apply to just one: apply to more than one and give yourself options.</div>
+    <h1>Opportunities for ABM students</h1>
+    <div class="sub">Internships, jobs, scholarships, programs, clubs, and competition teams, all in one place. <span id="updated">Updated Nov. 5, 2026.</span> Don&rsquo;t apply to just one: apply to more than one and give yourself options.</div>
   </div>
   <div class="body">
     <div class="filters">
@@ -272,7 +272,10 @@
     n.textContent=total?('Showing '+total+(total===1?' listing':' listings')):'Nothing open in that field right now. Check back, or pick another field.';
   }
   var hs=location.hash.slice(1);if(hs==='internships')t.value='i';if(hs==='jobs')t.value='j';if(hs==='programs')t.value='p';if(hs==='orgs')t.value='o';
-  t.addEventListener('change',run);c.addEventListener('change',run);run();
+  var fl=c.closest('label');
+  function sync(){ var na=(t.value==='p'||t.value==='o'); fl.style.display=na?'none':''; if(na) c.value='all'; }
+  t.addEventListener('change',function(){sync();run();});c.addEventListener('change',run);sync();run();
+  try{var lm=new Date(document.lastModified);if(!isNaN(lm)&&lm.getFullYear()>2025){var M=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];document.getElementById('updated').textContent='Updated '+M[lm.getMonth()]+' '+lm.getDate()+', '+lm.getFullYear()+'.';}}catch(e){}
 })();
 </script>
 </body>

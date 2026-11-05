@@ -113,12 +113,24 @@ def check(url):
     return status, why
 
 
-NEW_DATE_RE = re.compile(
-    r"(deadline|due|apply by|applications? (?:open|close|are due)|priority)[^.]{0,90}\b2027\b"
-    r"|\b(jan|feb|mar|apr|may)[a-z]*\.? \d{1,2},? 2027[^.]{0,40}(deadline|due)")
+FULL_DATE_RE = re.compile(
+    r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.? (\d{1,2}),? (202[7-9])\b")
+DEADLINE_WORDS = re.compile(r"deadline|due|apply by|applications? (?:open|close)|priority|submit")
 
 
-def watch_items():
+def future_deadline(body, today):
+    """Find a full future date (Month D, 2027+) with deadline wording just before it."""
+    for m in FULL_DATE_RE.finditer(body):
+        try:
+            d = dt.date(int(m.group(3)), MONTHS[m.group(1)[:3]], int(m.group(2)))
+        except ValueError:
+            continue
+        if d > today and DEADLINE_WORDS.search(body[max(0, m.start() - 100):m.start()]):
+            return m
+    return None
+
+
+def watch_items(today):
     try:
         items = json.load(open(".github/watchlist.json"))["items"]
     except (OSError, ValueError, KeyError):
@@ -129,7 +141,7 @@ def watch_items():
         if status != "ok":
             unreachable.append(f"- {it['name']}: {why}. {it['url']}")
             continue
-        m = NEW_DATE_RE.search(body)
+        m = future_deadline(body, today)
         if m:
             start = max(0, m.start() - 60)
             found.append(f"- **{it['name']}**: page now mentions \"...{body[start:m.end() + 40].strip()}...\" {it['url']}")
@@ -153,7 +165,7 @@ def main():
                 closed.append(f"- **{title}**: {why}. {url}")
             elif status == "unknown":
                 unknown.append(f"- {title}: {why}. {url}")
-    watch_found, watch_unreachable = watch_items()
+    watch_found, watch_unreachable = watch_items(today)
     problems = len(closed) + len(dates) + len(watch_found)
     lines = [f"Opportunities page check, {today:%b. %-d, %Y}. Listings checked: {len(p.items)}.", ""]
     if closed:

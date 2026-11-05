@@ -153,6 +153,10 @@ def main():
     p = Listings()
     p.feed(open(PAGE, encoding="utf-8").read())
     closed, dates, unknown = [], [], []
+    page = open(PAGE, encoding="utf-8").read()
+    for name, due in re.findall(r'<li><a [^>]*>(.*?) &rsaquo;</a><span>(.*?)</span></li>', page):
+        for d in passed_dates(html.unescape(due), today):
+            dates.append(f"- **Start-here card: {html.unescape(name)}**: {d:%b. %-d, %Y} has passed (\"{html.unescape(due)}\")")
     for it in p.items:
         title = html.unescape(" ".join(it["title"].split())) or "(untitled)"
         for d in passed_dates(html.unescape(it["due"]), today):

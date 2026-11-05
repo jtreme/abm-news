@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '17 12 */3 * *'   # about 7 a.m. Eastern every third day
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'internships/index.html'
+      - '.github/scripts/check_opportunities.py'
+      - '.github/workflows/check-opportunities.yml'
 
 permissions:
   contents: read

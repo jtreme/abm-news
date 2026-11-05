@@ -1,0 +1,13 @@
+{
+  "_about": "Programs whose next dates are not posted yet. The scheduled check opens each page and reports when it mentions a 2027 deadline, so the program can be added to the opportunities page. Remove an entry once it is on the page.",
+  "items": [
+    {"name": "Alternative Service Break (May Break 2027 trips)", "url": "https://sle.dasa.ncsu.edu/civic-community/asb/apply/"},
+    {"name": "McNair Scholars Program", "url": "https://trio.dasa.ncsu.edu/mcnair-scholars-program/future-mcnair-scholars/"},
+    {"name": "SECU Public Fellows", "url": "https://careers.dasa.ncsu.edu/?p=28055"},
+    {"name": "CEFS Agroecology Scholars (ASPIRE)", "url": "https://cefs.ncsu.edu/academics-and-education/internships/aspire-undergrad/"},
+    {"name": "Tri-Alpha first-generation honor society", "url": "https://firstpack.dasa.ncsu.edu/?p=38772"},
+    {"name": "Sustainability Fund grants", "url": "https://sustainability.ncsu.edu/get-involved/student-sustainability-fund/"},
+    {"name": "Paid summer research programs at NC State", "url": "https://undergradresearch.dasa.ncsu.edu/find-summer-research-programs/"},
+    {"name": "Spring Undergraduate Research Symposium abstracts", "url": "https://undergradresearch.dasa.ncsu.edu/symposium/"}
+  ]
+}

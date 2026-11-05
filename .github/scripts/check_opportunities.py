@@ -6,6 +6,7 @@ that have already passed. Writes a markdown report to report.md and prints
 """
 import datetime as dt
 import html
+import json
 import re
 import sys
 import urllib.error
@@ -82,7 +83,8 @@ def passed_dates(text, today):
     return out
 
 
-def check(url):
+def fetch_text(url):
+    """Return (status, detail, visible_text)."""
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,*/*"})
@@ -93,16 +95,45 @@ def check(url):
             body = re.sub(r"(?is)<(script|style|template|noscript)[^>]*>.*?</\1>", " ", body)
             body = html.unescape(re.sub(r"(?s)<[^>]+>", " ", body)).lower()
             body = " ".join(body.split())
-            for phrase in CLOSED_TEXT:
-                if phrase in body:
-                    return "closed", f'page says "{phrase}"'
-            return "ok", str(r.status)
+            return "ok", str(r.status), body
     except urllib.error.HTTPError as e:
         if e.code in (404, 410):
-            return "closed", f"HTTP {e.code}"
-        return "unknown", f"HTTP {e.code}"
+            return "closed", f"HTTP {e.code}", ""
+        return "unknown", f"HTTP {e.code}", ""
     except Exception as e:  # timeouts, blocked bots, TLS errors
-        return "unknown", type(e).__name__
+        return "unknown", type(e).__name__, ""
+
+
+def check(url):
+    status, why, body = fetch_text(url)
+    if status == "ok":
+        for phrase in CLOSED_TEXT:
+            if phrase in body:
+                return "closed", f'page says "{phrase}"'
+    return status, why
+
+
+NEW_DATE_RE = re.compile(
+    r"(deadline|due|apply by|applications? (?:open|close|are due)|priority)[^.]{0,90}\b2027\b"
+    r"|\b(jan|feb|mar|apr|may)[a-z]*\.? \d{1,2},? 2027[^.]{0,40}(deadline|due)")
+
+
+def watch_items():
+    try:
+        items = json.load(open(".github/watchlist.json"))["items"]
+    except (OSError, ValueError, KeyError):
+        return [], []
+    found, unreachable = [], []
+    for it in items:
+        status, why, body = fetch_text(it["url"])
+        if status != "ok":
+            unreachable.append(f"- {it['name']}: {why}. {it['url']}")
+            continue
+        m = NEW_DATE_RE.search(body)
+        if m:
+            start = max(0, m.start() - 60)
+            found.append(f"- **{it['name']}**: page now mentions \"...{body[start:m.end() + 40].strip()}...\" {it['url']}")
+    return found, unreachable
 
 
 def main():
@@ -122,14 +153,21 @@ def main():
                 closed.append(f"- **{title}**: {why}. {url}")
             elif status == "unknown":
                 unknown.append(f"- {title}: {why}. {url}")
-    problems = len(closed) + len(dates)
+    watch_found, watch_unreachable = watch_items()
+    problems = len(closed) + len(dates) + len(watch_found)
     lines = [f"Opportunities page check, {today:%b. %-d, %Y}. Listings checked: {len(p.items)}.", ""]
     if closed:
         lines += ["### Postings that look closed", *closed, ""]
     if dates:
         lines += ["### Dates on the page that have passed", *dates, ""]
+    if watch_found:
+        lines += ["### New dates may be posted for programs on the watch list",
+                  "Add these to the opportunities page, then remove them from .github/watchlist.json.",
+                  *watch_found, ""]
     if not problems:
         lines += ["Nothing to review. All checked links loaded and no listed dates have passed.", ""]
+    if watch_unreachable:
+        unknown += [u.replace("- ", "- Watch list: ", 1) for u in watch_unreachable]
     if unknown:
         lines += ["<details><summary>Links the checker could not open (often sites that block automated checks; usually fine)</summary>", "", *unknown, "", "</details>", ""]
     lines += ["LinkedIn search links are not checked. Nothing on the site was changed."]

@@ -62,7 +62,7 @@ main section { scroll-margin-top: 20px; }
 .deadline-card strong { font-family: "Roboto Slab", Georgia, serif; font-size: 25px; line-height: 1.1; }
 .deadline-card > span:not(.card-label):not(.deadline-card-body) { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .deadline-card-body .card-description { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.deadline-card-dark > span:not(.card-label) { color: #dedede; }
+.deadline-card.deadline-card-dark > span:not(.card-label):not(.deadline-card-body) { color: #f2f2f2; }
 .deadline-card b { margin-top: auto; padding-top: 22px; color: var(--red); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
 .deadline-card-body b { margin-top: auto; }
 .deadline-card-dark b { color: var(--white); }
@@ -121,24 +121,26 @@ main section { scroll-margin-top: 20px; }
 .opportunity-card-featured > a { color: var(--white); }
 .stacked-links { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 
-.reference-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 68px; align-items: start; }
+.reference-grid { display: grid; grid-template-columns: 1fr; gap: 82px; align-items: start; }
 .small-heading { display: block; }
 .small-heading h2 { font-size: clamp(30px, 3.4vw, 43px); }
-.answer-list { border-top: 2px solid var(--black); }
-.answer-list a { display: block; padding: 22px 4px 24px; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.answer-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--black); }
+.answer-list a { display: block; padding: 24px 30px 26px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.answer-list a:nth-child(even) { padding-right: 0; padding-left: 30px; border-left: 1px solid var(--rule); }
 .answer-list strong, .answer-list span { display: block; }
 .answer-list strong { font-family: "Roboto Slab", Georgia, serif; font-size: 20px; }
 .answer-list strong::after { content: " →"; color: var(--red); }
 .answer-list span { margin-top: 7px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .answer-list a:hover strong, .answer-list a:focus-visible strong { color: var(--red); }
-.calendar { background: var(--white); border-top: 8px solid var(--red); padding: 28px; box-shadow: var(--shadow-soft); }
-.calendar h2 { margin-bottom: 20px; font-size: 36px; }
-.calendar ol { margin: 0; padding: 0; list-style: none; }
-.calendar li { display: grid; grid-template-columns: 86px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid var(--soft); }
+.calendar { background: transparent; padding: 0; }
+.calendar > .kicker { text-align: center; }
+.calendar h2 { margin-bottom: 38px; text-align: center; font-size: clamp(46px, 7vw, 82px); }
+.calendar ol { margin: 0; padding: 0; border-top: 3px solid var(--black); list-style: none; }
+.calendar li { display: grid; grid-template-columns: 190px 1fr; gap: 38px; align-items: start; padding: 30px 8px 32px; border-bottom: 1px solid var(--rule); }
 .calendar time { display: flex; flex-direction: column; }
-.calendar time b { color: var(--red); font-size: 14px; }
-.calendar time span { margin-top: 3px; color: var(--muted); font-size: 12px; text-transform: uppercase; }
-.calendar li p { margin: 0; font-size: 14px; line-height: 1.45; }
+.calendar time b { color: var(--black); font-family: "Roboto Slab", Georgia, serif; font-size: clamp(27px, 4vw, 44px); line-height: 1; }
+.calendar time span { margin-top: 8px; color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.calendar li p { max-width: 790px; margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(20px, 2.7vw, 30px); line-height: 1.2; }
 
 .site-footer { background: var(--black); color: var(--white); border-top: 10px solid var(--red); padding-block: 58px 64px; }
 .footer-grid { display: grid; grid-template-columns: 1.1fr 1fr auto; gap: 48px; align-items: start; }
@@ -184,6 +186,13 @@ main section { scroll-margin-top: 20px; }
   .standfirst { grid-column: auto; padding: 21px 24px 23px; }
   .deadline-band, .cover-stories, .student-tools, .reference, .people-feature, .opportunities { padding-block: 55px; }
   .deadline-band { margin-top: 0; padding: 55px 0; }
+  .answer-list { grid-template-columns: 1fr; }
+  .answer-list a, .answer-list a:nth-child(even) { padding: 22px 4px 24px; border-left: 0; }
+  .calendar h2 { margin-bottom: 28px; text-align: left; font-size: 42px; }
+  .calendar > .kicker { text-align: left; }
+  .calendar li { grid-template-columns: 92px 1fr; gap: 18px; padding: 22px 2px 24px; }
+  .calendar time b { font-size: 21px; }
+  .calendar li p { font-size: 18px; }
   .section-heading, .opportunity-heading { display: block; }
   .section-heading .section-link, .opportunity-heading .section-link { display: inline-block; margin-top: 15px; }
   .deadline-grid, .tool-grid, .opportunity-grid, .footer-grid { grid-template-columns: 1fr; }
@@ -205,10 +214,10 @@ main section { scroll-margin-top: 20px; }
   .utility-nav { max-width: none; justify-content: flex-start; margin-top: 18px; }
   .masthead h1 { font-size: 52px; }
   .standfirst { font-size: 19px; }
-  .lead-copy, .mentor-copy, .calendar { padding: 22px; }
+  .lead-copy, .mentor-copy { padding: 22px; }
   .tool-card { display: block; }
   .tool-number { display: block; margin-bottom: 18px; }
-  .calendar li { grid-template-columns: 74px 1fr; gap: 10px; }
+  .calendar li { grid-template-columns: 82px 1fr; gap: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -9,11 +9,13 @@
   --muted: #5d5a56;
   --rule: #cbc5bd;
   --shell: 1180px;
+  --shadow-soft: 0 12px 32px rgba(24, 18, 12, 0.11);
+  --shadow-deep: 0 24px 60px rgba(24, 18, 12, 0.18);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Roboto", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #eee9e2; color: var(--ink); font-family: "Roboto", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 .shell { width: min(var(--shell), calc(100% - 48px)); margin-inline: auto; }
@@ -27,7 +29,7 @@ a { color: inherit; }
 .utility-nav a, .site-footer nav a { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 .utility-nav a:hover, .utility-nav a:focus-visible { color: var(--red); }
 
-.masthead { background: var(--red); color: var(--white); border-bottom: 10px solid var(--black); }
+.masthead { position: relative; z-index: 1; background: var(--red); color: var(--white); border-bottom: 10px solid var(--black); box-shadow: var(--shadow-deep); }
 .masthead-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.55fr); gap: 32px 72px; padding-block: 64px 58px; align-items: end; }
 .kicker { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: 0.17em; text-transform: uppercase; }
 .kicker-light { color: #ffb3b3; }
@@ -38,17 +40,18 @@ a { color: inherit; }
 
 main section { scroll-margin-top: 20px; }
 .deadline-band, .cover-stories, .student-tools, .reference { padding-block: 76px; }
+.deadline-band { position: relative; z-index: 2; margin-top: -38px; padding: 36px; background: #faf8f4; box-shadow: var(--shadow-deep); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; border-bottom: 2px solid var(--black); padding-bottom: 15px; }
 .section-heading h2, .people-intro h2, .opportunity-heading h2, .calendar h2, .site-footer h2 { margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(30px, 4vw, 50px); line-height: 1.02; letter-spacing: -0.035em; }
 .compact-heading { margin-bottom: 22px; }
 .compact-heading h2 { font-size: clamp(27px, 3vw, 38px); }
 
-.deadline-grid { display: grid; grid-template-columns: 1.1fr 1.65fr 1fr; border: 2px solid var(--black); background: var(--black); gap: 2px; }
+.deadline-grid { display: grid; grid-template-columns: 1.1fr 1.65fr 1fr; border: 2px solid var(--black); background: var(--black); gap: 2px; box-shadow: var(--shadow-soft); }
 .deadline-card { min-height: 260px; display: flex; flex-direction: column; background: var(--white); padding: 26px; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
 .deadline-card-dark { background: var(--black); color: var(--white); }
 .deadline-card-sweatshirt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, 0.8fr); padding: 0; overflow: hidden; }
 .deadline-card-body { display: flex; min-width: 0; flex-direction: column; padding: 26px; }
-.deadline-card-sweatshirt img { width: 100%; height: 100%; object-fit: contain; background: var(--white); }
+.deadline-card-sweatshirt img { width: 100%; height: 100%; object-fit: contain; background: var(--white); padding: 12px; }
 .deadline-card:hover, .deadline-card:focus-visible { background: #ffe2e2; }
 .deadline-card-dark:hover, .deadline-card-dark:focus-visible { background: var(--red-dark); }
 .card-label { display: block; margin: 0 0 10px; color: var(--red); font-size: 11px; font-weight: 900; letter-spacing: 0.12em; line-height: 1.35; text-transform: uppercase; }
@@ -61,13 +64,13 @@ main section { scroll-margin-top: 20px; }
 .deadline-card-body b { margin-top: auto; }
 .deadline-card-dark b { color: var(--white); }
 
-.cover-stories { padding-top: 24px; }
+.cover-stories { padding-top: 82px; }
 .cover-grid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.75fr); gap: 24px; align-items: stretch; }
-.lead-story, .mentor-story { background: var(--white); border-top: 8px solid var(--red); }
+.lead-story, .mentor-story { background: var(--white); border-top: 8px solid var(--red); box-shadow: var(--shadow-soft); transition: transform 180ms ease, box-shadow 180ms ease; }
 .image-link { display: block; overflow: hidden; }
 .lead-story .image-link { aspect-ratio: 16 / 9; }
 .mentor-story .image-link { aspect-ratio: 1 / 0.98; }
-.image-link img { width: 100%; height: 100%; object-fit: cover; transition: transform 280ms ease; }
+.image-link img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.04) contrast(1.025); transition: transform 280ms ease, filter 280ms ease; }
 .lead-story:hover .image-link img, .mentor-story:hover .image-link img { transform: scale(1.02); }
 .lead-copy, .mentor-copy { padding: 26px 28px 30px; }
 .lead-copy h3, .mentor-copy h3 { margin: 0; font-family: "Roboto Slab", Georgia, serif; line-height: 1.08; letter-spacing: -0.025em; }
@@ -82,7 +85,7 @@ main section { scroll-margin-top: 20px; }
 .people-intro { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: end; padding-bottom: 28px; border-bottom: 2px solid #444; margin-bottom: 28px; }
 .people-intro p:last-child { margin: 0; color: #d0d0d0; font-size: 17px; line-height: 1.6; }
 .people-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.person-card { min-height: 470px; background: var(--white); color: var(--ink); overflow: hidden; }
+.person-card { min-height: 470px; background: var(--white); color: var(--ink); overflow: hidden; box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24); transition: transform 180ms ease, box-shadow 180ms ease; }
 .person-card > a { height: 100%; display: flex; flex-direction: column; text-decoration: none; }
 .person-card img { width: 100%; aspect-ratio: 1 / 0.92; object-fit: cover; }
 .person-copy { display: flex; min-height: 150px; flex-direction: column; padding: 20px 22px 22px; border-left: 8px solid var(--red); }
@@ -92,7 +95,7 @@ main section { scroll-margin-top: 20px; }
 
 .student-tools { padding-bottom: 90px; }
 .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.tool-card { min-height: 330px; display: grid; grid-template-columns: auto 1fr; gap: 24px; padding: 34px; background: var(--white); border: 3px solid var(--red); text-decoration: none; }
+.tool-card { min-height: 330px; display: grid; grid-template-columns: auto 1fr; gap: 24px; padding: 34px; background: var(--white); border: 3px solid var(--red); box-shadow: var(--shadow-soft); text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease; }
 .tool-card-dark { background: var(--red); border-color: var(--red); color: var(--white); }
 .tool-number { color: var(--red); font-family: "Roboto Slab", Georgia, serif; font-size: 28px; font-weight: 900; }
 .tool-card-dark .tool-number, .tool-card-dark .card-label, .tool-card-dark b { color: #ffd0d0; }
@@ -104,7 +107,7 @@ main section { scroll-margin-top: 20px; }
 .opportunity-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; padding-bottom: 16px; border-bottom: 2px solid rgba(255, 255, 255, 0.55); }
 .opportunity-heading .section-link { color: var(--white); }
 .opportunity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.opportunity-card { min-height: 350px; display: flex; flex-direction: column; background: var(--white); color: var(--ink); padding: 28px; }
+.opportunity-card { min-height: 350px; display: flex; flex-direction: column; background: var(--white); color: var(--ink); padding: 28px; box-shadow: 0 15px 34px rgba(70, 0, 0, 0.2); transition: transform 180ms ease, box-shadow 180ms ease; }
 .opportunity-card-featured { grid-column: span 2; background: var(--black); color: var(--white); }
 .opportunity-card-red { background: #f7dede; }
 .opportunity-card-wide { grid-column: span 2; }
@@ -125,7 +128,7 @@ main section { scroll-margin-top: 20px; }
 .answer-list strong::after { content: " →"; color: var(--red); }
 .answer-list span { margin-top: 7px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .answer-list a:hover strong, .answer-list a:focus-visible strong { color: var(--red); }
-.calendar { background: var(--white); border-top: 8px solid var(--red); padding: 28px; }
+.calendar { background: var(--white); border-top: 8px solid var(--red); padding: 28px; box-shadow: var(--shadow-soft); }
 .calendar h2 { margin-bottom: 20px; font-size: 36px; }
 .calendar ol { margin: 0; padding: 0; list-style: none; }
 .calendar li { display: grid; grid-template-columns: 86px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid var(--soft); }
@@ -142,6 +145,16 @@ main section { scroll-margin-top: 20px; }
 .site-footer nav { flex-direction: column; }
 .site-footer nav a:hover, .site-footer nav a:focus-visible { color: #ff9f9f; }
 :focus-visible { outline: 3px solid #3f8cff; outline-offset: 4px; }
+
+@media (hover: hover) {
+  .lead-story:hover, .mentor-story:hover, .person-card:hover, .tool-card:hover, .opportunity-card:hover {
+    transform: translateY(-4px);
+  }
+  .lead-story:hover, .mentor-story:hover, .tool-card:hover { box-shadow: var(--shadow-deep); }
+  .person-card:hover { box-shadow: 0 22px 46px rgba(0, 0, 0, 0.34); }
+  .opportunity-card:hover { box-shadow: 0 22px 46px rgba(70, 0, 0, 0.3); }
+  .lead-story:hover .image-link img, .mentor-story:hover .image-link img { filter: saturate(1.1) contrast(1.04); }
+}
 
 @media (max-width: 940px) {
   .deadline-grid { grid-template-columns: 1fr 1fr; }
@@ -166,6 +179,7 @@ main section { scroll-margin-top: 20px; }
   .issue-note { max-width: 260px; }
   .standfirst { grid-column: auto; }
   .deadline-band, .cover-stories, .student-tools, .reference, .people-feature, .opportunities { padding-block: 55px; }
+  .deadline-band { margin-top: -20px; padding: 28px 16px; }
   .section-heading, .opportunity-heading { display: block; }
   .section-heading .section-link, .opportunity-heading .section-link { display: inline-block; margin-top: 15px; }
   .deadline-grid, .tool-grid, .opportunity-grid, .footer-grid { grid-template-columns: 1fr; }

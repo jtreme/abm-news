@@ -3,19 +3,19 @@
   --red-dark: #9f0000;
   --black: #151515;
   --ink: #1d1d1d;
-  --paper: #f4f1ec;
+  --paper: #f4f4f4;
   --white: #ffffff;
-  --soft: #e7e1d9;
-  --muted: #5d5a56;
-  --rule: #cbc5bd;
+  --soft: #e5e5e5;
+  --muted: #595959;
+  --rule: #d0d0d0;
   --shell: 1180px;
-  --shadow-soft: 0 12px 32px rgba(24, 18, 12, 0.11);
-  --shadow-deep: 0 24px 60px rgba(24, 18, 12, 0.18);
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.11);
+  --shadow-deep: 0 24px 60px rgba(0, 0, 0, 0.18);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #eee9e2; color: var(--ink); font-family: "Roboto", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Roboto", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 .shell { width: min(var(--shell), calc(100% - 48px)); margin-inline: auto; }
@@ -23,24 +23,27 @@ a { color: inherit; }
 .skip-link { position: fixed; left: 16px; top: -80px; z-index: 100; background: var(--white); color: var(--black); padding: 12px 18px; font-weight: 700; border: 3px solid var(--red); }
 .skip-link:focus { top: 16px; }
 
-.brand-bar { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.site-header { background: var(--black); }
+.brand-bar { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--white); }
 .ncsu-mark img { width: 120px; height: auto; }
 .utility-nav, .site-footer nav { display: flex; flex-wrap: wrap; gap: 10px 22px; }
 .utility-nav a, .site-footer nav a { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 .utility-nav a:hover, .utility-nav a:focus-visible { color: var(--red); }
 
-.masthead { position: relative; z-index: 1; background: var(--red); color: var(--white); border-bottom: 10px solid var(--black); box-shadow: var(--shadow-deep); }
-.masthead-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.55fr); gap: 32px 72px; padding-block: 64px 58px; align-items: end; }
+.masthead { position: relative; z-index: 1; isolation: isolate; background: var(--black) url("img/intramurals.jpg") center 46% / cover no-repeat; color: var(--white); }
+.masthead::before { position: absolute; z-index: -1; inset: 0; background: rgba(0, 0, 0, 0.34); content: ""; }
+.masthead-grid { min-height: 660px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.55fr); gap: 18px; padding-block: 72px 54px; align-content: end; align-items: end; }
+.masthead-grid > div:first-child { background: rgba(18, 18, 18, 0.92); padding: 30px 34px 34px; box-shadow: var(--shadow-deep); }
 .kicker { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: 0.17em; text-transform: uppercase; }
-.kicker-light { color: #ffb3b3; }
+.kicker-light { color: #ff8a8a; }
 .masthead h1 { max-width: 780px; margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(58px, 9vw, 108px); line-height: 0.9; letter-spacing: -0.055em; text-transform: uppercase; }
-.issue-note { border-top: 3px solid var(--white); padding-top: 15px; }
+.issue-note { background: var(--red); padding: 24px; box-shadow: var(--shadow-deep); }
 .issue-note p { margin: 0 0 5px; font-size: 16px; }
-.standfirst { grid-column: 1 / -1; max-width: 900px; margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(20px, 2.5vw, 31px); line-height: 1.35; }
+.standfirst { grid-column: 1 / -1; max-width: 900px; margin: 0; background: var(--white); color: var(--black); padding: 24px 30px 27px; box-shadow: var(--shadow-deep); font-family: "Roboto Slab", Georgia, serif; font-size: clamp(20px, 2.5vw, 31px); line-height: 1.35; }
 
 main section { scroll-margin-top: 20px; }
 .deadline-band, .cover-stories, .student-tools, .reference { padding-block: 76px; }
-.deadline-band { position: relative; z-index: 2; margin-top: -38px; padding: 36px; background: #faf8f4; box-shadow: var(--shadow-deep); }
+.deadline-band { position: relative; z-index: 2; margin-top: 0; padding: 76px 0; background: transparent; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; border-bottom: 2px solid var(--black); padding-bottom: 15px; }
 .section-heading h2, .people-intro h2, .opportunity-heading h2, .calendar h2, .site-footer h2 { margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(30px, 4vw, 50px); line-height: 1.02; letter-spacing: -0.035em; }
 .compact-heading { margin-bottom: 22px; }
@@ -101,15 +104,15 @@ main section { scroll-margin-top: 20px; }
 .tool-card-dark .tool-number, .tool-card-dark .card-label, .tool-card-dark b { color: #ffd0d0; }
 .tool-card h3 { margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(27px, 3vw, 39px); line-height: 1.08; }
 .tool-card p:not(.card-label) { color: var(--muted); font-size: 16px; line-height: 1.55; }
-.tool-card-dark p:not(.card-label) { color: #f5dcdc; }
+.tool-card-dark p:not(.card-label) { color: #ededed; }
 
-.opportunities { background: var(--red); color: var(--white); padding-block: 76px 86px; }
+.opportunities { background: #242424; color: var(--white); padding-block: 76px 86px; }
 .opportunity-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; padding-bottom: 16px; border-bottom: 2px solid rgba(255, 255, 255, 0.55); }
 .opportunity-heading .section-link { color: var(--white); }
 .opportunity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.opportunity-card { min-height: 350px; display: flex; flex-direction: column; background: var(--white); color: var(--ink); padding: 28px; box-shadow: 0 15px 34px rgba(70, 0, 0, 0.2); transition: transform 180ms ease, box-shadow 180ms ease; }
-.opportunity-card-featured { grid-column: span 2; background: var(--black); color: var(--white); }
-.opportunity-card-red { background: #f7dede; }
+.opportunity-card { min-height: 350px; display: flex; flex-direction: column; background: var(--white); color: var(--ink); padding: 28px; box-shadow: 0 15px 34px rgba(0, 0, 0, 0.24); transition: transform 180ms ease, box-shadow 180ms ease; }
+.opportunity-card-featured { grid-column: span 2; background: #343434; color: var(--white); }
+.opportunity-card-red { background: #e9e9e9; }
 .opportunity-card-wide { grid-column: span 2; }
 .opportunity-card h3 { max-width: 680px; margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.08; }
 .opportunity-card p:not(.card-label) { max-width: 720px; color: var(--muted); font-size: 16px; line-height: 1.55; }
@@ -152,7 +155,7 @@ main section { scroll-margin-top: 20px; }
   }
   .lead-story:hover, .mentor-story:hover, .tool-card:hover { box-shadow: var(--shadow-deep); }
   .person-card:hover { box-shadow: 0 22px 46px rgba(0, 0, 0, 0.34); }
-  .opportunity-card:hover { box-shadow: 0 22px 46px rgba(70, 0, 0, 0.3); }
+  .opportunity-card:hover { box-shadow: 0 22px 46px rgba(0, 0, 0, 0.36); }
   .lead-story:hover .image-link img, .mentor-story:hover .image-link img { filter: saturate(1.1) contrast(1.04); }
 }
 
@@ -175,11 +178,12 @@ main section { scroll-margin-top: 20px; }
   .brand-bar { padding-block: 16px; align-items: flex-start; }
   .utility-nav { max-width: 260px; justify-content: flex-end; gap: 8px 14px; }
   .utility-nav a { font-size: 11px; }
-  .masthead-grid { grid-template-columns: 1fr; gap: 28px; padding-block: 48px 44px; }
+  .masthead-grid { min-height: 620px; grid-template-columns: 1fr; gap: 14px; padding-block: 48px 44px; }
+  .masthead-grid > div:first-child { padding: 24px; }
   .issue-note { max-width: 260px; }
-  .standfirst { grid-column: auto; }
+  .standfirst { grid-column: auto; padding: 21px 24px 23px; }
   .deadline-band, .cover-stories, .student-tools, .reference, .people-feature, .opportunities { padding-block: 55px; }
-  .deadline-band { margin-top: -20px; padding: 28px 16px; }
+  .deadline-band { margin-top: 0; padding: 55px 0; }
   .section-heading, .opportunity-heading { display: block; }
   .section-heading .section-link, .opportunity-heading .section-link { display: inline-block; margin-top: 15px; }
   .deadline-grid, .tool-grid, .opportunity-grid, .footer-grid { grid-template-columns: 1fr; }

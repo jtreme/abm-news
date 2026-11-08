@@ -43,17 +43,22 @@ main section { scroll-margin-top: 20px; }
 .compact-heading { margin-bottom: 22px; }
 .compact-heading h2 { font-size: clamp(27px, 3vw, 38px); }
 
-.deadline-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border: 2px solid var(--black); background: var(--black); gap: 2px; }
+.deadline-grid { display: grid; grid-template-columns: 1.1fr 1.65fr 1fr; border: 2px solid var(--black); background: var(--black); gap: 2px; }
 .deadline-card { min-height: 260px; display: flex; flex-direction: column; background: var(--white); padding: 26px; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
 .deadline-card-dark { background: var(--black); color: var(--white); }
+.deadline-card-sweatshirt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, 0.8fr); padding: 0; overflow: hidden; }
+.deadline-card-body { display: flex; min-width: 0; flex-direction: column; padding: 26px; }
+.deadline-card-sweatshirt img { width: 100%; height: 100%; object-fit: contain; background: var(--white); }
 .deadline-card:hover, .deadline-card:focus-visible { background: #ffe2e2; }
 .deadline-card-dark:hover, .deadline-card-dark:focus-visible { background: var(--red-dark); }
 .card-label { display: block; margin: 0 0 10px; color: var(--red); font-size: 11px; font-weight: 900; letter-spacing: 0.12em; line-height: 1.35; text-transform: uppercase; }
 .deadline-card-dark .card-label { color: #ff9c9c; }
 .deadline-card strong { font-family: "Roboto Slab", Georgia, serif; font-size: 25px; line-height: 1.1; }
-.deadline-card > span:not(.card-label) { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.deadline-card > span:not(.card-label):not(.deadline-card-body) { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.deadline-card-body .card-description { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .deadline-card-dark > span:not(.card-label) { color: #dedede; }
 .deadline-card b { margin-top: auto; padding-top: 22px; color: var(--red); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+.deadline-card-body b { margin-top: auto; }
 .deadline-card-dark b { color: var(--white); }
 
 .cover-stories { padding-top: 24px; }
@@ -102,6 +107,7 @@ main section { scroll-margin-top: 20px; }
 .opportunity-card { min-height: 350px; display: flex; flex-direction: column; background: var(--white); color: var(--ink); padding: 28px; }
 .opportunity-card-featured { grid-column: span 2; background: var(--black); color: var(--white); }
 .opportunity-card-red { background: #f7dede; }
+.opportunity-card-wide { grid-column: span 2; }
 .opportunity-card h3 { max-width: 680px; margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.08; }
 .opportunity-card p:not(.card-label) { max-width: 720px; color: var(--muted); font-size: 16px; line-height: 1.55; }
 .opportunity-card-featured p:not(.card-label) { color: #d7d7d7; }
@@ -146,7 +152,7 @@ main section { scroll-margin-top: 20px; }
   .mentor-story .image-link { aspect-ratio: auto; }
   .people-intro { grid-template-columns: 1fr; gap: 20px; }
   .opportunity-grid { grid-template-columns: 1fr 1fr; }
-  .opportunity-card-featured { grid-column: 1 / -1; }
+  .opportunity-card-featured, .opportunity-card-wide { grid-column: 1 / -1; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .site-footer nav { grid-column: 1 / -1; flex-direction: row; }
 }
@@ -163,7 +169,8 @@ main section { scroll-margin-top: 20px; }
   .section-heading, .opportunity-heading { display: block; }
   .section-heading .section-link, .opportunity-heading .section-link { display: inline-block; margin-top: 15px; }
   .deadline-grid, .tool-grid, .opportunity-grid, .footer-grid { grid-template-columns: 1fr; }
-  .deadline-card:first-child, .opportunity-card-featured { grid-column: auto; }
+  .deadline-card:first-child, .opportunity-card-featured, .opportunity-card-wide { grid-column: auto; }
+  .deadline-card-sweatshirt { grid-template-columns: minmax(0, 1fr) 120px; }
   .deadline-card { min-height: 210px; }
   .mentor-story { display: block; }
   .mentor-story .image-link { aspect-ratio: 4 / 3; }

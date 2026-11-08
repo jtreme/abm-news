@@ -101,7 +101,8 @@ main section { scroll-margin-top: 20px; }
 .tool-card { min-height: 330px; display: grid; grid-template-columns: auto 1fr; gap: 24px; padding: 34px; background: var(--white); border: 3px solid var(--red); box-shadow: var(--shadow-soft); text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease; }
 .tool-card-dark { background: var(--red); border-color: var(--red); color: var(--white); }
 .tool-number { color: var(--red); font-family: "Roboto Slab", Georgia, serif; font-size: 28px; font-weight: 900; }
-.tool-card-dark .tool-number, .tool-card-dark .card-label, .tool-card-dark b { color: #ffd0d0; }
+.tool-card-dark .tool-number, .tool-card-dark .card-label { color: #ffd0d0; }
+.tool-card-dark b { display: inline-block; justify-self: start; color: var(--red); background: var(--white); padding: 10px 14px; }
 .tool-card h3 { margin: 0; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(27px, 3vw, 39px); line-height: 1.08; }
 .tool-card p:not(.card-label) { color: var(--muted); font-size: 16px; line-height: 1.55; }
 .tool-card-dark p:not(.card-label) { color: #ededed; }

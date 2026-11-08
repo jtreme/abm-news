@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Roboto+Slab:wght@700;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="magazine.css?v=5">
-<style>.alum-spotlight{padding-block:76px 0}.alum-card{display:grid;grid-template-columns:minmax(240px,0.8fr) 1.2fr}.alum-card .image-link{aspect-ratio:auto}.alum-card .image-link img{height:100%;object-fit:cover}@media (max-width:700px){.alum-card{display:block}.alum-card .image-link{aspect-ratio:1/1}}</style>
+<style>.alum-spotlight{padding-block:76px 0}.alum-card{display:grid;grid-template-columns:minmax(240px,0.8fr) 1.2fr}.alum-card .image-link{aspect-ratio:auto}.alum-card .image-link img{height:100%;object-fit:cover}@media (max-width:700px){.alum-card{display:block}.alum-card .image-link{aspect-ratio:1/1}}.next-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.next-grid .opportunity-card{min-height:300px;grid-column:auto!important}.kelsey-spot{padding-block:0 76px}@media (max-width:700px){.next-grid{grid-template-columns:1fr!important}}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -112,7 +112,7 @@
         </div>
       </div>
 
-      <div class="cover-grid">
+      <div class="cover-grid" style="grid-template-columns:1fr">
         <article class="lead-story">
           <a class="image-link" href="crop-dusters/">
             <img src="img/intramurals.jpg" alt="The Crop Dusters intramural basketball team" width="1200" height="692">
@@ -125,18 +125,27 @@
           </div>
         </article>
 
-        <article class="mentor-story">
+      </div>
+    </section>
+
+    <section class="shell alum-spotlight kelsey-spot" aria-labelledby="kelsey-heading">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Want to do research?</p>
+          <h2 id="kelsey-heading">How to ask a professor to mentor you</h2>
+        </div>
+      </div>
+        <article class="mentor-story alum-card">
           <a class="image-link" href="kelsey-vourazeris/">
             <img src="img/grid-kelsey.jpg" alt="Dr. Kelsey Vourazeris" width="580" height="600">
           </a>
           <div class="mentor-copy">
-            <p class="card-label">Meet your people</p>
-            <h3><a href="kelsey-vourazeris/">How to ask a professor to mentor your research</a></h3>
+            <p class="card-label">Dr. Kelsey Vourazeris &middot; Agricultural and Resource Economics</p>
+            <h3><a href="kelsey-vourazeris/">Start with a topic you<a href="kelsey-vourazeris/">How to ask a professor to mentor your research</a>rsquo;re curious about</a></h3>
             <p>Dr. Kelsey Vourazeris: come with a topic you’re curious about, a rough question, and why it interests you.</p>
             <a class="text-link" href="kelsey-vourazeris/">Read the Q&amp;A <span aria-hidden="true">→</span></a>
           </div>
         </article>
-      </div>
     </section>
 
     
@@ -226,43 +235,35 @@
           <a class="section-link" href="../internships/">See every open opportunity <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="opportunity-grid">
-          <article class="opportunity-card opportunity-card-featured">
-            <p class="card-label">From an ABM alum</p>
+        <div class="opportunity-grid next-grid">
+          <article class="opportunity-card">
+            <p class="card-label">From an ABM alum · Summer</p>
             <h3>Two grain internships at Mountaire</h3>
-            <p>Mountaire Farms is a poultry company with operations in North Carolina and Delaware. Summer internships in Delaware, with housing. Look for Agri-Business Analytics Intern.</p>
+            <p>Mountaire Farms is a poultry company with operations in North Carolina and Delaware. Summer internships in Delaware, with housing, sent to us by ABM alum Ashling Murphy. Look for Agri-Business Analytics Intern.</p>
             <a href="https://mountairejobs.com/#en/sites/Career-Site/jobs?keyword=agri-business&amp;mode=location">See the Mountaire openings <span aria-hidden="true">→</span></a>
-            <a href="ashling-murphy/" style="margin-top:10px">Meet Ashling, the ABM alum who sent them <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="opportunity-card">
             <p class="card-label">First-years · Due Jan. 11</p>
             <h3>Caldwell Fellows: up to $10,000 a year</h3>
-            <p>NC State’s leadership program. You need a 3.25 GPA and at least two more years at NC State.</p>
+            <p>NC State&rsquo;s leadership program. First-years only, and you can apply just once. You need a 3.25 GPA and at least two more years at NC State.</p>
             <a href="https://caldwellfellows.ncsu.edu/application-process">See the application timeline <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="opportunity-card">
             <p class="card-label">Jan. 22–23 · Talley</p>
-            <h3>Four marketing competitions with cash prizes</h3>
-            <p>Business case, marketing strategy, The $1,000 Launch, and Perfect Pitch. Top prizes range from $75 to $500.</p>
+            <h3>Win up to $500 in four marketing competitions</h3>
+            <p>Business case, marketing strategy, The $1,000 Launch, and Perfect Pitch. Get a conference ticket, then sign up for your competitions.</p>
             <div class="stacked-links">
               <a href="https://www.eventbrite.com/e/nc-state-ama-9th-annual-regional-conference-tickets-2003831532054">1. Get a conference ticket <span aria-hidden="true">→</span></a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLScw4J6tsjSW4kmWwis8IZcqpgnp5XIOcmQj0rBJfdMhrJ7Ubw/viewform">2. Sign up to compete <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="opportunity-card opportunity-card-red opportunity-card-wide">
-            <p class="card-label">More summer internships</p>
-            <h3>More than 100 opportunities, all in one place</h3>
-            <p>Browse Prague, Extension, Rural Works!, policy, finance, and more—then filter by deadline and type.</p>
-            <a href="../internships/">Explore opportunities <span aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="opportunity-card" style="grid-column:1 / -1;min-height:0">
+          <article class="opportunity-card">
             <p class="card-label">Study abroad · Scholarships due Nov. 15</p>
             <h3>Find study abroad programs that fit ABM</h3>
-            <p>NC State Study Abroad lists the programs that fit ABM. Open College of Agriculture and Life Sciences, then Human and Resource Systems. Summer 2027 early action and study abroad scholarship applications are due Nov. 15.</p>
+            <p>Open College of Agriculture and Life Sciences, then Human and Resource Systems, for the programs that fit ABM. Summer 2027 early action and study abroad scholarship applications are due Nov. 15.</p>
             <a href="https://studyabroad.ncsu.edu/programs-by-area-of-study/">See programs for ABM <span aria-hidden="true">→</span></a>
           </article>
         </div>

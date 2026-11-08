@@ -30,7 +30,7 @@ a { color: inherit; }
 .utility-nav a, .site-footer nav a { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 .utility-nav a:hover, .utility-nav a:focus-visible { color: var(--red); }
 
-.masthead { position: relative; z-index: 1; isolation: isolate; background: var(--black) url("img/intramurals.jpg") center 46% / cover no-repeat; color: var(--white); }
+.masthead { position: relative; z-index: 1; isolation: isolate; background: var(--black) url("img/intramurals.jpg") center top / cover no-repeat; color: var(--white); }
 .masthead::before { position: absolute; z-index: -1; inset: 0; background: rgba(0, 0, 0, 0.34); content: ""; }
 .masthead-grid { min-height: 660px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.55fr); gap: 18px; padding-block: 72px 54px; align-content: end; align-items: end; }
 .masthead-grid > div:first-child { background: rgba(18, 18, 18, 0.92); padding: 30px 34px 34px; box-shadow: var(--shadow-deep); }

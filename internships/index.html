@@ -7,7 +7,7 @@
 <meta name="description" content="Open internships and full-time jobs for NC State ABM students, updated as new ones come in.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root { --red:#CC0000; --black:#1a1a1a; --gray:#f3f3f3; --text:#1a1a1a; --muted:#555; --rule:#d9d9d9; }
   * { box-sizing:border-box; }
@@ -92,31 +92,197 @@
 .count{font-size:14px;color:var(--muted);margin:10px 0 0}
 .empty{font-size:15px;color:var(--muted);margin-top:26px}
 </style>
+
+<style>
+/* ---- Magazine service-page layer ---- */
+:root{--red:#cc0000;--black:#151515;--ink:#1d1d1d;--paper:#f4f4f4;--muted:#595959;--rule:#d0d0d0;--shell:1080px}
+body{background:var(--paper);color:var(--ink)}
+.shell{width:min(var(--shell),calc(100% - 40px));margin-inline:auto}
+.kicker{margin:0 0 8px;color:var(--red);font-size:12px;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+.kicker-light{color:#ff8a8a}
+.site-header{background:var(--black)}
+.brand-bar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff;flex-wrap:wrap;padding-block:12px}
+.brand-bar img{width:120px;height:auto;display:block}
+.utility-nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.utility-nav a{color:#fff;font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.utility-nav a:hover,.utility-nav a[aria-current]{color:#ff8a8a}
+/* hero */
+.op-hero{background:var(--black);color:#fff;border-top:1px solid #2c2c2c;padding:46px 0 0}
+.op-hero h1{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(50px,9vw,104px);line-height:.92;letter-spacing:-.05em;text-transform:uppercase}
+.op-stand{max-width:760px;margin:18px 0 0;color:#e2e2e2;font-family:"Roboto Slab",Georgia,serif;font-weight:700;font-size:clamp(18px,2.2vw,24px);line-height:1.4}
+.op-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid #3a3a3a}
+.op-stats div{padding:16px 16px 18px 0;border-right:1px solid #3a3a3a}
+.op-stats div+div{padding-left:18px}
+.op-stats div:last-child{border-right:0}
+.op-stats b{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(34px,6vw,62px);line-height:1;letter-spacing:-.03em}
+.op-stats div:nth-child(2) b{color:#ff6b6b}
+.op-stats span{display:block;margin-top:6px;color:#bdbdbd;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.op-find{background:#222;border-top:6px solid var(--red);margin-top:6px;padding:18px 0 20px}
+.op-find .shell{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.op-find .find-label{flex:0 0 auto;font-family:"Roboto Slab",Georgia,serif;font-size:24px;font-weight:900;color:#fff;margin:0 10px 8px 0}
+.op-find .filters{flex:1 1 420px;background:transparent;border:0;padding:0;margin:0}
+.op-find .filters label{color:#ff8a8a}
+.op-find .filters select{border:0;border-radius:0;font-weight:700;padding:12px}
+/* deadline rail */
+.soon{border:0;margin:0;padding:0;display:none;background:var(--red);color:#fff}
+.soon.on{display:block}
+.soon .rail{padding:30px 0 34px}
+.soon .lbl{color:#fff;opacity:.9}
+.soon h3{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(28px,4vw,44px);line-height:1.05;margin:4px 0 18px;color:#fff}
+#soon-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.soon a.it{display:flex;flex-direction:column;background:#fff;color:var(--black);border:0;padding:14px 16px 16px;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .15s}
+.soon a.it:hover{transform:translateY(-3px)}
+.soon .dd{display:block;font-family:"Roboto Slab",Georgia,serif;font-weight:900;font-size:44px;line-height:1;color:var(--red);letter-spacing:-.03em}
+.soon .dd i{display:block;font-style:normal;font-family:Roboto,Arial,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--black);margin-bottom:2px}
+.soon a.it b{font-size:15px;line-height:20px;margin-top:10px}
+.soon a.it small{font-size:13px;color:var(--muted);margin-top:4px}
+.soon a.it em{margin-top:auto;padding-top:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+/* featured */
+.op-feat{padding:56px 0 20px}
+.op-head h2{margin:0 0 22px;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.03em;padding-bottom:14px;border-bottom:3px solid var(--black)}
+.feat-lead{display:grid;grid-template-columns:minmax(220px,.75fr) 1.25fr;background:var(--black);color:#fff;box-shadow:0 18px 44px rgba(0,0,0,.16)}
+.feat-photo{display:block;background:#fff}
+.feat-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.feat-copy{padding:30px 32px 32px;border-left:8px solid var(--red)}
+.feat-copy h3{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(28px,3.4vw,42px);line-height:1.06;letter-spacing:-.02em}
+.feat-copy p{color:#dcdcdc;font-size:16px;line-height:1.55;margin:14px 0 0}
+.feat-copy .small{font-size:14px;color:#a9a9a9}
+.feat-links{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:20px}
+.btn{display:inline-block;background:var(--red);color:#fff!important;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 18px}
+.btn:hover{background:#9f0000}
+.feat-links a:not(.btn){color:#fff;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:14px}
+.feat-card{background:#fff;padding:22px 22px 24px;border-top:6px solid var(--red);display:flex;flex-direction:column}
+.feat-card h3{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:24px;line-height:1.12}
+.feat-card p{font-size:15px;line-height:1.5;color:#333;margin:10px 0 0}
+.feat-card .links{margin-top:auto;padding-top:14px;border-top:0}
+.feat-card .links a{display:block;color:var(--red);font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-top:6px}
+/* listings */
+.wrap{max-width:none;background:transparent}
+.body{max-width:900px;margin:30px auto 0;background:#fff;padding:34px 40px 40px;box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.list-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:3px solid var(--black);padding-bottom:12px}
+.list-top h2{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(28px,3.6vw,40px)!important;line-height:1.05}
+.list-top a{color:var(--red);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.count{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:12px 0 0}
+section[data-type]>h2{font-family:"Roboto Slab",Georgia,serif!important;font-size:clamp(28px,3.6vw,38px)!important;line-height:1.05;margin:44px 0 0!important;padding:14px 0 0;border-top:8px solid var(--black)}
+.q{font-family:"Roboto Slab",Georgia,serif;font-size:21px;font-weight:900;letter-spacing:-.01em;text-transform:none;color:var(--black);margin-top:30px;padding-left:12px;border-left:5px solid var(--red)}
+.group{margin-top:26px}
+.job{padding:16px 0 18px}
+.job .t{font-size:17px;line-height:23px}
+.job .due{display:inline-block;background:#fdecec;border-left:3px solid var(--red);padding:1px 8px;margin-top:4px}
+.job a{text-transform:uppercase;font-size:12px;font-weight:900;letter-spacing:.08em;margin-top:8px}
+.stages{margin:0 0 36px}
+.stages .row1 button{background:var(--black);color:#fff;border-color:var(--black);border-radius:0;font-family:"Roboto Slab",Georgia,serif;font-size:19px}
+.stages .row1 button.on{background:var(--red);border-color:var(--red)}
+.watch{border-left-width:8px}
+.site-footer{background:var(--black);color:#fff;border-top:10px solid var(--red);padding:52px 0 58px;margin-top:56px}
+.footer-grid{display:grid;grid-template-columns:1.1fr 1fr auto;gap:34px}
+.site-footer h2{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(28px,3.4vw,42px);line-height:1.05}
+.site-footer p{margin:0 0 12px;color:#d7d7d7;font-size:15px;line-height:1.55}
+.site-footer p a{color:#fff;font-weight:700}
+.site-footer nav{display:flex;flex-direction:column;gap:10px}
+.site-footer nav a{color:#fff;font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+@media (max-width:760px){
+  .feat-lead{grid-template-columns:1fr}
+  .feat-photo{aspect-ratio:4/3;overflow:hidden}
+  .feat-copy{border-left:0;border-top:8px solid var(--red);padding:22px 20px 24px}
+  .footer-grid{grid-template-columns:1fr}
+  .body{margin-top:20px;padding:24px 18px 30px}
+}
+@media (max-width:560px){
+  .op-hero{padding-top:30px}
+  .op-stand{font-size:17px;margin-top:12px}
+  .op-stats{margin-top:20px}
+  .op-stats div{padding:12px 8px 12px 0}
+  .op-stats div+div{padding-left:10px}
+  .op-stats span{font-size:10px;letter-spacing:.06em}
+  .op-find .find-label{font-size:20px;margin-bottom:0}
+  .op-find .filters{flex-basis:100%}
+  #soon-list{grid-template-columns:1fr}
+  .soon a.it{display:grid;grid-template-columns:64px 1fr;column-gap:12px;padding:12px 14px}
+  .soon .dd{grid-row:1/4;font-size:36px}
+  .soon a.it b{margin-top:0}
+  .soon a.it em{padding-top:6px}
+}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <div style="background:#fff;padding:14px 28px 10px;"><a href="https://www.ncsu.edu/"><img src="../issue-1/img/brick.png" alt="NC State University" style="display:block;height:38px;width:auto;"></a></div>
-  <div class="masthead">
-    <div class="eyebrow">NC State Agricultural Business Management</div>
-    <div class="brand"><a href="https://jtreme.github.io/abm-news/">The ABM Drop</a></div>
-    <div class="issue">Opportunities for ABM students</div>
+<header class="site-header">
+  <div class="brand-bar shell">
+    <a href="https://www.ncsu.edu/" aria-label="NC State University"><img src="../issue-1/img/brick.png" alt="NC State University" width="120" height="38"></a>
+    <nav class="utility-nav" aria-label="Site navigation">
+      <a href="../issue-3/">Latest issue</a>
+      <a href="../advising/">Advising</a>
+      <a href="./" aria-current="page">Opportunities</a>
+      <a href="../">All issues</a>
+    </nav>
   </div>
-  <div class="band">
-    <div class="label">Apply now</div>
-    <h1>Opportunities for ABM students</h1>
-    <div class="sub">Internships, jobs, scholarships, programs, clubs, and competition teams, all in one place. <span id="updated">Updated Nov. 5, 2026.</span> Don&rsquo;t apply to just one: apply to more than one and give yourself options.</div>
-  </div>
-  <div class="body">
-    <div class="soon" id="soon"><div class="lbl">Closing soon</div><h3>Don&rsquo;t miss these</h3><div id="soon-list"></div></div>
-    <div class="stages">
-      <div class="row1"><button type="button" data-s="fy">New to ABM? Start here &rsaquo;</button></div>
-      <div class="pick" id="s-fy"><h3>New to ABM: start here</h3><p>For first-years and transfer students. Start looking for a summer internship now. Plenty of employers hire students early, and a first internship, even a small one, makes the next one easier to get. Add scholarships and a club or team while you&rsquo;re at it.</p><ul><li><a href="#internships" class="tointern">Internships open now, on this page &rsaquo;</a><span>Apply to more than one</span></li><li><a href="https://cals.ncsu.edu/cals-rural-works-students/" target="_blank" rel="noopener">CALS Rural Works!: paid summer internship plus a $5,000 CALS stipend &rsaquo;</a><span>See positions on the CALS page</span></li><li><a href="#orgs" class="toorgs" data-show="o">Clubs, teams, and ag organizations to join &rsaquo;</a><span>Pick one and go to a meeting</span></li><li><a href="https://go.ncsu.edu/PACKASSIST" target="_blank" rel="noopener">PACK ASSIST: one application, hundreds of scholarships &rsaquo;</a><span>Opens Dec. 1. Priority deadline Feb. 15</span></li><li><a href="https://caldwellfellows.ncsu.edu/application-process" target="_blank" rel="noopener">Caldwell Fellows: $10,000 a year, first-year students only &rsaquo;</a><span>Due Jan. 11</span></li><li><a href="mailto:jtreme@ncsu.edu?subject=Quiz%20Bowl" target="_blank" rel="noopener">Quiz Bowl team (ARE 201 students) &rsaquo;</a><span>Email Dr. Treme</span></li></ul><button type="button" class="go" data-show="i">See all internships &rsaquo;</button> <button type="button" class="go" data-show="o" style="background:#fff;color:#1a1a1a">See clubs and organizations &rsaquo;</button></div>
+</header>
+<section class="op-hero">
+  <div class="shell">
+    <p class="kicker kicker-light">The ABM Drop &middot; Opportunities</p>
+    <h1>Your next move</h1>
+    <p class="op-stand">Internships, jobs, scholarships, programs, clubs, and competition teams for ABM students, all in one place. Apply to more than one and give yourself options.</p>
+    <div class="op-stats">
+      <div><b id="st-total">105</b><span>Listings</span></div>
+      <div><b id="st-soon">&ndash;</b><span>Closing in 45 days</span></div>
+      <div><b id="st-upd">&ndash;</b><span>Last updated</span></div>
     </div>
-    <p style="font-size:15px;font-weight:bold;margin:4px 0 8px">Narrow it down: pick what you&rsquo;re looking for and your field.</p>
-    <div class="filters">
+  </div>
+  <div class="op-find" id="find">
+    <div class="shell">
+      <p class="find-label">Find yours</p>
+      <div class="filters">
       <label>Show<select id="f-type"><option value="all">Everything</option><option value="i">Internships</option><option value="j">Full-time jobs</option><option value="p">Programs and scholarships</option><option value="o">Clubs, teams, and ag organizations</option></select></label>
       <label>Field<select id="f-cat"><option value="all">All fields</option><option value="ag">Agriculture and food</option><option value="sales">Sales and marketing</option><option value="fin">Finance, banking, and accounting</option><option value="ops">Operations and supply chain</option><option value="pol">Policy and government</option></select></label>
     </div>
+    </div>
+  </div>
+</section>
+<div class="soon" id="soon"><div class="rail shell"><div class="lbl kicker">Closing soon</div><h3>Don&rsquo;t miss these</h3><div id="soon-list"></div></div></div>
+<section class="op-feat" id="featured" aria-labelledby="feat-h">
+  <div class="shell">
+    <div class="op-head"><p class="kicker">Featured</p><h2 id="feat-h">Worth your time right now</h2></div>
+    <article class="feat-lead" data-until="2027-01-31">
+      <a class="feat-photo" href="../issue-3/ashling-murphy/"><img src="../issue-3/img/ashling-feature.jpg" alt="Ashling Murphy, ABM alum" width="580" height="630"></a>
+      <div class="feat-copy">
+        <p class="kicker kicker-light">From an ABM alum &middot; Summer 2027</p>
+        <h3>Two paid grain internships at Mountaire Farms</h3>
+        <p>Grain logistics and merchandising, or hedging and risk management, in Millsboro, Delaware, with housing provided. Sent to us by ABM alum Ashling Murphy, Senior Grain Merchandising Manager at Mountaire, a poultry company with operations in North Carolina and Delaware.</p>
+        <div class="feat-links"><a class="btn" href="https://mountairejobs.com/#en/sites/Career-Site/jobs?keyword=agri-business&amp;mode=location" target="_blank" rel="noopener">Apply at Mountaire &rsaquo;</a><a href="../issue-3/ashling-murphy/">Read Ashling&rsquo;s story &rsaquo;</a></div>
+        <p class="small">On Mountaire&rsquo;s page, look for &ldquo;Agri-Business Analytics Intern.&rdquo;</p>
+      </div>
+    </article>
+    <div class="feat-grid">
+      <article class="feat-card" data-until="2027-01-11">
+        <p class="kicker">First-years &middot; Due Jan. 11</p>
+        <h3>Caldwell Fellows: up to $10,000 a year</h3>
+        <p>NC State&rsquo;s leadership program, for first-year students only. You need a 3.25 GPA and at least two more years at NC State. You can apply only once.</p>
+        <div class="links"><a href="https://caldwellfellows.ncsu.edu/application-process" target="_blank" rel="noopener">Apply &rsaquo;</a></div>
+      </article>
+      <article class="feat-card" data-until="2027-01-21">
+        <p class="kicker">Jan. 22&ndash;23 &middot; Talley</p>
+        <h3>Win up to $500 in four marketing competitions</h3>
+        <p>Business case, marketing strategy, a $1,000 launch challenge, and Perfect Pitch. Get a conference ticket on Eventbrite, then sign up for your competitions.</p>
+        <div class="links"><a href="https://www.eventbrite.com/e/nc-state-ama-9th-annual-regional-conference-tickets-2003831532054" target="_blank" rel="noopener">1. Register &rsaquo;</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScw4J6tsjSW4kmWwis8IZcqpgnp5XIOcmQj0rBJfdMhrJ7Ubw/viewform" target="_blank" rel="noopener">2. Sign up to compete &rsaquo;</a></div>
+      </article>
+      <article class="feat-card" data-until="2026-11-15">
+        <p class="kicker">Scholarships due Nov. 15</p>
+        <h3>Find study abroad programs that fit ABM</h3>
+        <p>Under College of Agriculture and Life Sciences, open Human and Resource Systems. Scholarships for summer 2027 programs are due Nov. 15.</p>
+        <div class="links"><a href="https://studyabroad.ncsu.edu/programs-by-area-of-study/" target="_blank" rel="noopener">See programs for ABM &rsaquo;</a><a href="https://studyabroad.ncsu.edu/funding/nc-state-scholarships/" target="_blank" rel="noopener">Scholarship application &rsaquo;</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+<div class="body">
+        <div class="stages">
+      <div class="row1"><button type="button" data-s="fy">New to ABM? Start here &rsaquo;</button></div>
+      <div class="pick" id="s-fy"><h3>New to ABM: start here</h3><p>For first-years and transfer students. Start looking for a summer internship now. Plenty of employers hire students early, and a first internship, even a small one, makes the next one easier to get. Add scholarships and a club or team while you&rsquo;re at it.</p><ul><li><a href="#internships" class="tointern">Internships open now, on this page &rsaquo;</a><span>Apply to more than one</span></li><li><a href="https://cals.ncsu.edu/cals-rural-works-students/" target="_blank" rel="noopener">CALS Rural Works!: paid summer internship plus a $5,000 CALS stipend &rsaquo;</a><span>See positions on the CALS page</span></li><li><a href="#orgs" class="toorgs" data-show="o">Clubs, teams, and ag organizations to join &rsaquo;</a><span>Pick one and go to a meeting</span></li><li><a href="https://go.ncsu.edu/PACKASSIST" target="_blank" rel="noopener">PACK ASSIST: one application, hundreds of scholarships &rsaquo;</a><span>Opens Dec. 1. Priority deadline Feb. 15</span></li><li><a href="https://caldwellfellows.ncsu.edu/application-process" target="_blank" rel="noopener">Caldwell Fellows: $10,000 a year, first-year students only &rsaquo;</a><span>Due Jan. 11</span></li><li><a href="mailto:jtreme@ncsu.edu?subject=Quiz%20Bowl" target="_blank" rel="noopener">Quiz Bowl team (ARE 201 students) &rsaquo;</a><span>Email Dr. Treme</span></li></ul><button type="button" class="go" data-show="i">See all internships &rsaquo;</button> <button type="button" class="go" data-show="o" style="background:#fff;color:#1a1a1a">See clubs and organizations &rsaquo;</button></div>
+    </div>
+        
+    <div class="list-top"><h2>Every listing</h2><a href="#find">Change filters &uarr;</a></div>
     <p class="count" id="f-count"></p>
     <section id="internships" data-type="i">
     <h2 style="font-size:24px;margin:22px 0 0">Internships</h2>
@@ -290,13 +456,22 @@
     <p style="margin-top:18px;font-size:14px;color:#555">Dues and chapter details come from each organization&rsquo;s site and can change. Thanks to Matt Smith and the ARE Ambassadors for compiling this list.</p>
     </section>
     <p style="margin-top:26px;font-size:14px;color:#555">&ldquo;Search LinkedIn&rdquo; opens a LinkedIn search for that posting, not the posting itself. &ldquo;Apply&rdquo; and &ldquo;Learn more&rdquo; go straight to the employer or program. Postings can close without notice, so check the listing before you apply.</p>
-    <div class="footer">
-      <b>Know of an internship or job?</b>
-      Send it to Matt Smith, mgsmit25@ncsu.edu, and we&rsquo;ll add it here. Every issue and every full story: <a href="https://go.ncsu.edu/abm-news" style="color:#CC0000;font-weight:bold;">go.ncsu.edu/abm-news</a>.
-    </div>
-    <a class="back" href="https://jtreme.github.io/abm-news/">&lsaquo; All issues</a>
   </div>
 </div>
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><p class="kicker kicker-light">That&rsquo;s the Drop.</p><h2>Know of an internship or job?</h2></div>
+    <div>
+      <p>Send it to Matt Smith at <a href="mailto:mgsmit25@ncsu.edu">mgsmit25@ncsu.edu</a> and we&rsquo;ll add it here.</p>
+      <p>Every issue and every full story: <a href="https://go.ncsu.edu/abm-news">go.ncsu.edu/abm-news</a>.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="../issue-3/">Latest issue</a>
+      <a href="../advising/">Advising</a>
+      <a href="../">All issues</a>
+    </nav>
+  </div>
+</footer>
 <script>
 (function(){
   var t=document.getElementById('f-type'),c=document.getElementById('f-cat'),n=document.getElementById('f-count');
@@ -349,17 +524,24 @@
       items.push({d:best,title:t?t.childNodes[0].textContent.trim():'',meta:meta?meta.textContent:'',href:a?a.getAttribute('href'):'#'});
     });
     items.sort(function(a,b){return a.d-b.d});
+    var ss=document.getElementById('st-soon'); if(ss) ss.textContent=items.length;
     items=items.slice(0,5); if(!items.length) return;
     var MN=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];
     var html=items.map(function(i){
       var days=Math.round((i.d-today)/864e5), when=days===0?'Due today':days===1?'Due tomorrow':'Due '+MN[i.d.getMonth()]+' '+i.d.getDate();
       var ext=/^https?:|^mailto:/.test(i.href)?' target="_blank" rel="noopener"':'';
-      return '<a class="it" href="'+i.href+'"'+ext+'><b>'+i.title.replace(/</g,'&lt;')+'</b>'+(i.meta?'<small>'+i.meta.replace(/</g,'&lt;')+'</small>':'')+'<em>'+when+' &rsaquo;</em></a>';
+      var SM=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+      return '<a class="it" href="'+i.href+'"'+ext+'><span class="dd"><i>'+SM[i.d.getMonth()]+'</i>'+i.d.getDate()+'</span><b>'+i.title.replace(/</g,'&lt;')+'</b>'+(i.meta?'<small>'+i.meta.replace(/</g,'&lt;')+'</small>':'')+'<em>'+when+' &rsaquo;</em></a>';
     }).join('');
     document.getElementById('soon-list').innerHTML=html; document.getElementById('soon').classList.add('on');
   })();
-  t.addEventListener('change',function(){sync();run();});c.addEventListener('change',run);sync();run();
-  try{var lm=new Date(document.lastModified);if(!isNaN(lm)&&lm.getFullYear()>2025){var M=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];document.getElementById('updated').textContent='Updated '+M[lm.getMonth()]+' '+lm.getDate()+', '+lm.getFullYear()+'.';}}catch(e){}
+  function jump(){var e=document.querySelector('.list-top');if(e)e.scrollIntoView({behavior:'smooth'});}
+  t.addEventListener('change',function(){sync();run();jump();});c.addEventListener('change',function(){run();jump();});sync();run();
+  var st=document.getElementById('st-total'); if(st) st.textContent=document.querySelectorAll('.job').length;
+  (function(){var now=new Date(),shown=0;[].slice.call(document.querySelectorAll('[data-until]')).forEach(function(c){var d=new Date(c.getAttribute('data-until')+'T23:59:59');if(d<now)c.parentNode.removeChild(c);else shown++;});
+    var g=document.querySelector('.feat-grid');if(g&&!g.children.length)g.parentNode.removeChild(g);
+    if(!shown){var f=document.getElementById('featured');if(f)f.parentNode.removeChild(f);}})();
+  try{var lm=new Date(document.lastModified);if(!isNaN(lm)&&lm.getFullYear()>2025){var M=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];var su=document.getElementById('st-upd');if(su)su.textContent=M[lm.getMonth()]+' '+lm.getDate();var ud=document.getElementById('updated');if(!ud)return;document.getElementById('updated').textContent='Updated '+M[lm.getMonth()]+' '+lm.getDate()+', '+lm.getFullYear()+'.';}}catch(e){}
 })();
 </script>
 </body>

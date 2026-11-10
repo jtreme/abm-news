@@ -69,6 +69,8 @@ class Listings(HTMLParser):
 
 def passed_dates(text, today):
     out = []
+    # An opening date is not a deadline: "Opens Dec. 1" or "open Feb. 1, 2027" is skipped.
+    text = re.sub(r"\bopens?\s+" + DATE_RE.pattern, "", text, flags=re.I)
     for mon, day, year in DATE_RE.findall(text):
         m = MONTHS[mon[:3].lower()]
         y = int(year) if year else today.year

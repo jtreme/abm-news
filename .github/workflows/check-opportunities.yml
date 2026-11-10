@@ -2,7 +2,7 @@ name: Check opportunities page
 
 on:
   schedule:
-    - cron: '17 12 */3 * *'   # about 7 a.m. Eastern every third day
+    - cron: '17 11 * * *'   # about 6:15 a.m. Eastern every day
   workflow_dispatch:
   push:
     branches: [main]

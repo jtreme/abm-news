@@ -2,10 +2,6 @@
   "_about": "Programs whose next dates are not posted yet. The scheduled check opens each page and reports when it mentions a 2027 deadline, so the program can be added to the opportunities page. Remove an entry once it is on the page.",
   "items": [
     {
-      "name": "Alternative Service Break (May Break 2027 trips)",
-      "url": "https://sle.dasa.ncsu.edu/civic-community/asb/apply/"
-    },
-    {
       "name": "McNair Scholars Program",
       "url": "https://trio.dasa.ncsu.edu/mcnair-scholars-program/future-mcnair-scholars/"
     },

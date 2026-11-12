@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Roboto+Slab:wght@700;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="magazine.css?v=1">
 <style>
-.masthead::before{display:none!important}
 .hero-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:48px;align-items:end;padding-block:64px 60px}
 .hero-split h1{margin:6px 0 0}
 .hero-photo{margin:0;position:relative}
@@ -70,6 +69,18 @@
   .feature-card .copy{padding:24px 22px}
   .deadline-grid{grid-template-columns:1fr!important}
 }
+.hero-mosaic{position:absolute;inset:0;z-index:-2;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:#000}
+.hero-mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+.masthead::before{display:block!important;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.25) 35%,rgba(0,0,0,.78) 62%,rgba(0,0,0,.92) 100%)!important}
+.masthead-grid{grid-template-columns:1fr!important;gap:14px!important;padding-block:260px 56px!important}
+.masthead-grid > div:first-child{background:none!important;box-shadow:none!important;padding:0!important}
+.masthead h1{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.masthead .kicker-light{color:#fff!important}
+.standfirst{color:#fff!important;text-shadow:0 1px 12px rgba(0,0,0,.5);max-width:900px}
+.dc-lead{display:grid;grid-template-columns:.85fr 1.15fr;background:#fff;border-top:8px solid var(--red);box-shadow:var(--shadow-soft)}
+.dc-lead .image-link img{width:100%;height:100%;min-height:560px;object-fit:cover;display:block}
+.dc-lead .mentor-copy h3{font-size:clamp(30px,3.4vw,44px)}
+@media (max-width:700px){.hero-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:1fr 1fr}.masthead-grid{padding-block:180px 40px!important}.dc-lead{display:block}.dc-lead .image-link img{min-height:0;aspect-ratio:4/5}}
 </style>
 </head>
 <body>
@@ -89,20 +100,22 @@
     </div>
 
     <div class="masthead">
-      <div class="shell hero-split">
+      <div class="hero-mosaic" aria-hidden="true">
+        <img src="img/capitol.jpg" alt="" style="object-position:center 60%">
+        <img src="img/elena-check.jpg" alt="" style="object-position:center 30%">
+        <img src="img/usda.jpg" alt="" style="object-position:center 40%">
+        <img src="img/volleyball.jpg" alt="" style="object-position:center 55%">
+      </div>
+      <div class="shell masthead-grid">
         <div>
           <p class="kicker kicker-light">NC State Agricultural Business Management</p>
           <h1>The ABM Drop</h1>
-          <div class="issue-note">
-            <p><strong>Issue 1</strong></p>
-            <p><time datetime="2026-10-27">Tuesday, October 27, 2026</time></p>
-          </div>
-          <p class="standfirst">Welcome to the first ABM Drop. This is where you&rsquo;ll find opportunities worth taking, people worth knowing, and what ABM students are doing beyond the classroom. A quick read to help you make more of your major.</p>
         </div>
-        <figure class="hero-photo">
-          <img src="img/capitol.jpg" alt="ABM students on the Capitol steps in Washington, D.C." width="482" height="636">
-          <figcaption>ABM students on the Capitol steps, Washington, D.C., October 2026.</figcaption>
-        </figure>
+        <div class="issue-note">
+          <p><strong>Issue 1</strong></p>
+          <p><time datetime="2026-10-27">Tuesday, October 27, 2026</time></p>
+        </div>
+        <p class="standfirst">Thirty students on Capitol Hill, a pitch from a balcony, a USDA roundtable, 15 students headed to Kansas City, and game day with ABM intramurals.</p>
       </div>
     </div>
   </header>
@@ -142,16 +155,14 @@
           <h2 id="dc-heading">30 ABM students took the DC Learning Journey</h2>
         </div>
       </div>
-      <article class="feature-card">
-        <div class="copy">
+      <article class="dc-lead">
+        <div class="image-link"><img src="img/capitol.jpg" alt="ABM students on the Capitol steps in Washington, D.C." width="482" height="636" style="object-position:center 60%"></div>
+        <div class="mentor-copy">
           <p class="card-label">Washington, D.C. &middot; Sept. 30&ndash;Oct. 3</p>
           <h3>Four days with the people who shape ag policy</h3>
           <p>Thirty ABM students spent September 30&ndash;October 3 in Washington, D.C., meeting the people who shape agricultural policy. Their conversations took them from congressional offices and USDA to meetings with Farm Bureau and industry advocates at the Capitol Hill Club. They met Senate and House Agriculture Committee staff, North Carolina congressional offices, and Senator Ted Budd.</p>
           <p>One of ABM&rsquo;s High-Impact Experiences, the trip was offered at no cost to students and organized by the Office of Student Mentoring board. Board member Justin Somers led the group, joined by board members Nelson Powell and Peter Thornton, with Madi Varron coordinating logistics. The next DC Learning Journey is planned for fall 2027.</p>
-        </div>
-        <div class="feature-quote">
-          <span>&ldquo;The DC Learning Journey didn&rsquo;t just expose me to a career path in policy, it lit a fire in me to keep learning and push myself.&rdquo;</span>
-          <small>Mason Hoyle, ABM</small>
+          <blockquote>&ldquo;The DC Learning Journey didn&rsquo;t just expose me to a career path in policy, it lit a fire in me to keep learning and push myself.&rdquo;<small>Mason Hoyle, ABM</small></blockquote>
         </div>
       </article>
     </section>

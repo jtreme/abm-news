@@ -1,204 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Issue 1, October 27, 2026 | The ABM Drop</title>
-<meta name="description" content="The ABM Drop, Issue 1: Career Connections, Helms internship, UTA call, Elena Wigglesworth, Brandon Estevez, the DC Learning Journey, USDA roundtable, AFA, intramurals, and Women in Ag.">
-<style>body{margin:0;background:#f3f3f3;} img{max-width:100%;height:auto;} .back{display:block;max-width:600px;margin:0 auto;padding:4px 12px 28px;font:bold 14px Arial,Helvetica,sans-serif;color:#CC0000;text-decoration:none;}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The ABM Drop, Issue 1 | NC State Agricultural Business Management</title>
+  <meta name="description" content="Issue 1 of The ABM Drop: the DC Learning Journey, a balcony pitch win, avocado supply chains, a USDA roundtable, AFA in Kansas City, and ABM intramurals.">
+  <meta property="og:title" content="The ABM Drop, Issue 1">
+  <meta property="og:description" content="People, opportunities, and deadlines for NC State Agricultural Business Management students.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jtreme.github.io/abm-news/issue-1/">
+  <meta property="og:image" content="https://jtreme.github.io/abm-news/issue-1/img/capitol.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Roboto+Slab:wght@700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="magazine.css?v=1">
+<style>
+.masthead::before{display:none!important}
+.hero-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:48px;align-items:end;padding-block:64px 60px}
+.hero-split h1{margin:6px 0 0}
+.hero-photo{margin:0;position:relative}
+.hero-photo img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;border-top:8px solid var(--red)}
+.hero-photo figcaption{margin-top:10px;color:#bdbdbd;font-size:13px;line-height:1.4}
+.issue-note{background:none!important;box-shadow:none!important;padding:12px 0 0!important;border-top:2px solid rgba(255,255,255,.6);display:flex;gap:18px;margin-top:22px}
+.issue-note{flex-wrap:wrap}.issue-note p{white-space:nowrap;margin:0!important;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.standfirst{background:none!important;box-shadow:none!important;padding:0!important;color:#e6e6e6!important;margin-top:20px!important}
+.deadline-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.deadline-note{margin:14px 0 0;color:var(--muted);font-size:15px}
+.feature-card{background:#fff;border-top:8px solid var(--red);box-shadow:var(--shadow-soft);display:grid;grid-template-columns:1.3fr .7fr}
+.feature-card .copy{padding:34px 36px}
+.feature-card h3{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(28px,3.2vw,42px);line-height:1.06}
+.feature-card .copy p:not(.card-label){color:var(--muted);font-size:17px;line-height:1.6}
+.feature-quote{background:var(--red);color:#fff;padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+.feature-quote.dark{background:var(--black)}
+.feature-quote span{font-family:"Roboto Slab",Georgia,serif;font-size:clamp(21px,2.3vw,28px);line-height:1.32;font-weight:700}
+.feature-quote small{display:block;margin-top:14px;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.feature-quote a{color:#fff;margin-top:20px}
+.story-stack{display:grid;gap:28px}
+.alum-card{display:grid;grid-template-columns:minmax(240px,.8fr) 1.2fr}
+.alum-card .image-link{aspect-ratio:auto}
+.alum-card .image-link img{height:100%;object-fit:cover}
+.mentor-copy blockquote{margin:18px 0;padding-left:16px;border-left:5px solid var(--red);font-family:"Roboto Slab",Georgia,serif;font-size:20px;line-height:1.38}
+.mentor-copy blockquote small{display:block;margin-top:8px;font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.people-feature .names{columns:3;column-gap:28px;margin:26px 0 0;padding:0;list-style:none;color:#e6e6e6;font-size:16px;line-height:1.9}
+.people-feature .names li{break-inside:avoid}
+.afa-quote{display:block;margin-top:30px;background:var(--red);color:#fff;text-decoration:none;padding:28px 34px}
+.afa-quote span{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(22px,2.6vw,30px);line-height:1.3;font-weight:700}
+.afa-quote small{display:block;margin-top:10px;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.two-up{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+.two-up .quote-box{background:#fff;border-left:8px solid var(--red);padding:24px 26px;box-shadow:var(--shadow-soft)}
+.two-up .quote-box span{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:19px;line-height:1.4;font-weight:700}
+.two-up .quote-box small{display:block;margin-top:10px;color:var(--muted);font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.next-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.next-grid .opportunity-card{grid-column:auto!important}
+.insta{background:var(--black);color:#fff;padding:30px 32px;margin-top:22px}
+.insta h3{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:28px}
+.insta p{color:#d7d7d7;font-size:16px;line-height:1.5}
+.insta a{color:#ff8a8a;font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:14px;text-decoration:none}
+@media (max-width:900px){
+  .hero-split{grid-template-columns:1fr;gap:28px;padding-block:44px 40px}
+  .hero-photo img{max-height:420px}
+  .feature-card{grid-template-columns:1fr}
+  .next-grid{grid-template-columns:1fr!important}
+  .people-feature .names{columns:2}
+  .two-up{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .alum-card{display:block}
+  .alum-card .image-link{aspect-ratio:4/3}
+  .feature-card .copy{padding:24px 22px}
+  .deadline-grid{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f3f3" style="background-color:#f3f3f3;margin:0;padding:0;">
-<tr><td align="center" style="padding:24px 12px;">
+  <header class="site-header">
+    <div class="brand-bar shell">
+      <a class="ncsu-mark" href="https://www.ncsu.edu/" aria-label="NC State University">
+        <img src="img/brick.png" alt="NC State University" width="120" height="38">
+      </a>
+      <nav class="utility-nav" aria-label="Issue navigation">
+        <a href="../advising/">Advising</a>
+        <a href="../internships/">Opportunities</a>
+        <a href="email.html">Email edition</a>
+        <a href="../">All issues</a>
+      </nav>
+    </div>
 
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:600px;width:100%;background-color:#ffffff;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;">
+    <div class="masthead">
+      <div class="shell hero-split">
+        <div>
+          <p class="kicker kicker-light">NC State Agricultural Business Management</p>
+          <h1>The ABM Drop</h1>
+          <div class="issue-note">
+            <p><strong>Issue 1</strong></p>
+            <p><time datetime="2026-10-27">Tuesday, October 27, 2026</time></p>
+          </div>
+          <p class="standfirst">Welcome to the first ABM Drop. This is where you&rsquo;ll find opportunities worth taking, people worth knowing, and what ABM students are doing beyond the classroom. A quick read to help you make more of your major.</p>
+        </div>
+        <figure class="hero-photo">
+          <img src="img/capitol.jpg" alt="ABM students on the Capitol steps in Washington, D.C." width="482" height="636">
+          <figcaption>ABM students on the Capitol steps, Washington, D.C., October 2026.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
 
-<!-- Brick -->
-<tr><td bgcolor="#ffffff" style="background-color:#ffffff;padding:16px 28px 12px 28px;"><a href="https://www.ncsu.edu/"><img src="img/brick.png" width="120" height="38" alt="NC State University" style="display:block;width:120px;height:38px;border:0;"></a></td></tr>
-<!-- Masthead -->
-<tr><td bgcolor="#CC0000" style="background-color:#CC0000;padding:34px 28px 28px 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#ffffff;">NC State Agricultural Business Management</div>
-  <div style="font-size:46px;line-height:48px;font-weight:bold;text-transform:uppercase;letter-spacing:-1px;color:#ffffff;margin-top:12px;">The ABM Drop</div>
-  <div style="font-size:15px;line-height:22px;color:#ffffff;margin-top:12px;">Issue 1 &middot; Tuesday, October 27, 2026</div>
-  <div style="font-size:15px;line-height:22px;color:#ffffff;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.35);">Welcome to the first ABM Drop. This is where you'll find opportunities worth taking, people worth knowing, and what ABM students are doing beyond the classroom. A quick read to help you make more of your major.</div>
-</td></tr>
+  <main id="main">
+    <section class="deadline-band shell" aria-labelledby="act-now-heading">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="kicker">Don&rsquo;t miss this &middot; Thursday, Oct. 29</p>
+          <h2 id="act-now-heading">Agribusiness Career Connections, all in Nelson Hall</h2>
+        </div>
+      </div>
+      <div class="deadline-grid">
+        <a class="deadline-card deadline-card-dark" href="https://docs.google.com/forms/d/1o6DKtXsHHQUVELxff4kL8NBz2_GGBW7uNOcXptcqR8U/viewform">
+          <span class="card-label">Signup required</span>
+          <strong>Practice interviews with Terra Green</strong>
+          <span>10:30 a.m.&ndash;12:30 p.m. Check in at Room 3313. Twenty minutes each, lunch provided.</span>
+          <b>Sign up for a practice interview <span aria-hidden="true">→</span></b>
+        </a>
+        <div class="deadline-card">
+          <span class="card-label">Drop in, no signup</span>
+          <strong>Resume help and interview practice</strong>
+          <span>Room 3313, 10 a.m.&ndash;2 p.m.</span>
+        </div>
+        <div class="deadline-card">
+          <span class="card-label">Drop in, no signup</span>
+          <strong>One-on-ones with AgSouth Farm Credit</strong>
+          <span>Room 4305, 10 a.m.&ndash;2 p.m.</span>
+        </div>
+      </div>
+    </section>
 
-<!-- Don't Miss This -->
-<tr><td bgcolor="#1a1a1a" style="background-color:#1a1a1a;padding:20px 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#ff6b6b;">Don't miss this</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;color:#ffffff;margin-top:5px;">Thursday, Oct. 29: Terra Green practice interviews, AgSouth drop-ins, resume help</div>
-  <div style="font-size:15px;line-height:22px;color:#dddddd;margin-top:6px;">All in Nelson Hall.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;font-size:15px;line-height:22px;color:#dddddd;">
-    <tr><td valign="top" style="padding:5px 0;border-top:1px solid #444444;"><b style="color:#ffffff;">Resume help and interview practice</b><br>Room 3313, 10 a.m.&ndash;2 p.m. Drop in, no signup.</td></tr>
-    <tr><td valign="top" style="padding:5px 0;border-top:1px solid #444444;"><b style="color:#ffffff;">AgSouth Farm Credit one-on-ones</b><br>Room 4305, 10 a.m.&ndash;2 p.m. Drop in, no signup.</td></tr>
-    <tr><td valign="top" style="padding:5px 0;border-top:1px solid #444444;"><b style="color:#ffffff;">Terra Green practice interviews</b><br>10:30 a.m.&ndash;12:30 p.m., check in at Room 3313. 20 minutes each, lunch provided. <b style="color:#ff6b6b;">Signup required.</b></td></tr>
-  </table>
-  <div style="margin-top:12px;"><a href="https://docs.google.com/forms/d/1o6DKtXsHHQUVELxff4kL8NBz2_GGBW7uNOcXptcqR8U/viewform" style="color:#ffffff;font-weight:bold;font-size:15px;">Sign up for a practice interview &rsaquo;</a></div>
-</td></tr>
+    <section class="cover-stories shell" aria-labelledby="dc-heading">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Cover story &middot; ABM in action</p>
+          <h2 id="dc-heading">30 ABM students took the DC Learning Journey</h2>
+        </div>
+      </div>
+      <article class="feature-card">
+        <div class="copy">
+          <p class="card-label">Washington, D.C. &middot; Sept. 30&ndash;Oct. 3</p>
+          <h3>Four days with the people who shape ag policy</h3>
+          <p>Thirty ABM students spent September 30&ndash;October 3 in Washington, D.C., meeting the people who shape agricultural policy. Their conversations took them from congressional offices and USDA to meetings with Farm Bureau and industry advocates at the Capitol Hill Club. They met Senate and House Agriculture Committee staff, North Carolina congressional offices, and Senator Ted Budd.</p>
+          <p>One of ABM&rsquo;s High-Impact Experiences, the trip was offered at no cost to students and organized by the Office of Student Mentoring board. Board member Justin Somers led the group, joined by board members Nelson Powell and Peter Thornton, with Madi Varron coordinating logistics. The next DC Learning Journey is planned for fall 2027.</p>
+        </div>
+        <div class="feature-quote">
+          <span>&ldquo;The DC Learning Journey didn&rsquo;t just expose me to a career path in policy, it lit a fire in me to keep learning and push myself.&rdquo;</span>
+          <small>Mason Hoyle, ABM</small>
+        </div>
+      </article>
+    </section>
 
-<!-- Your Next Move: Helms -->
-<tr><td style="padding:26px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Your next move</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Helms/OSM Policy Scholarship internship: apply now</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">A summer in a congressional office in Washington, D.C., working on national ag policy, advocacy, and constituent communications, with a $5,000 stipend. Application, three short essays, and two recommendation letters due <b>December 1</b>. Don't overlook this one.</div>
-  <div style="margin-top:10px;"><a href="http://go.ncsu.edu/helms-internship" style="color:#CC0000;font-weight:bold;font-size:15px;">Apply at go.ncsu.edu/helms-internship &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="cover-stories shell" aria-labelledby="people-heading" style="padding-top:0">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Meet your people</p>
+          <h2 id="people-heading">A balcony pitch and a broken supply chain</h2>
+        </div>
+      </div>
+      <div class="story-stack">
+        <article class="mentor-story alum-card">
+          <a class="image-link" href="elena-wigglesworth/">
+            <img src="img/elena-check.jpg" alt="Elena Wigglesworth with the Minute to Pitch It check" width="720" height="710">
+          </a>
+          <div class="mentor-copy">
+            <p class="card-label">Elena Wigglesworth &middot; ABM &rsquo;28 &middot; Roots Up Wellness</p>
+            <h3><a href="elena-wigglesworth/">She pitched her business from a balcony and won</a></h3>
+            <p>Afraid of heights? Elena Wigglesworth isn&rsquo;t. At Entrepalooza&rsquo;s Minute to Pitch It in September, she found out the stage was a balcony 12 feet above the judges. She went second and won $500 for Roots Up Wellness, her plan to bring yoga, fitness classes, and retreats to farms and green spaces. On October 22 she pitched it to Canadian billionaire Ronnen Harary, and she&rsquo;s now in the running for the final round in December, with $25,000 at stake.</p>
+            <p>Minute to Pitch It is run by NC State Entrepreneurship, which helps any student turn an idea into a venture. Start with Kenneth Proseus, kpproseu@ncsu.edu.</p>
+            <blockquote>&ldquo;Start now!&rdquo;<small>Elena Wigglesworth, on starting a business as a student</small></blockquote>
+            <a class="text-link" href="elena-wigglesworth/">Read Matt Smith&rsquo;s full story on Elena <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
 
-<!-- Your Next Move: UTA call -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Your next move</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Be a UTA in spring</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Remember the person who helped you finally understand something in class? You could be that person for someone else. UTAs sit in on class, run review sessions, and work alongside faculty, and it counts as one of ABM's High-Impact Experiences. Tell us which course or courses you want; you need to have taken them and done well. Applications due <b>Friday, November 6</b>.</div>
-  <div style="margin-top:10px;"><a href="https://docs.google.com/forms/d/14N1MlV3MVDNqoB9rtFS-jl3ryymCbe0JO7kfYe9gNio/viewform" style="color:#CC0000;font-weight:bold;font-size:15px;">Apply to be a UTA &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+        <article class="feature-card">
+          <div class="copy">
+            <p class="card-label">Spooky Research Slam &middot; Thu., Oct. 29, 4:30&ndash;6 p.m. &middot; Fishbowl Forum, Hill Library</p>
+            <h3><a href="brandon-estevez/" style="color:inherit;text-decoration:none">Brandon Estevez on where the avocado supply chain breaks</a></h3>
+            <p>Brandon&rsquo;s talk is &ldquo;Ripe for Disaster: Where the Avocado Supply Chain Breaks.&rdquo; His argument: cheap, always-in-stock avocados hide how fragile the system behind them is, from deforestation and cartel violence in Mexico to a handful of USDA inspectors at the border. He&rsquo;s building a model to put a dollar figure on a disruption.</p>
+            <p>The project is self-directed through the Office of Undergraduate Research, with Dr. Kelsey Vourazeris as mentor, and it&rsquo;s the first in a series he plans on supply chain fragility.</p>
+            <a class="text-link" href="brandon-estevez/">Read the full Q&amp;A with Brandon <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="feature-quote dark">
+            <span>&ldquo;If you eat an avocado here in North Carolina, it was likely grown by farmers 2,000 miles away you&rsquo;ll never meet.&rdquo;</span>
+            <small>Brandon Estevez, ABM</small>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<!-- Lunch with Dr. Treme (button) -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Your call</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Lunch with Dr. Treme, Friday, Oct. 30, 12&ndash;1</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Have lunch with Dr. Treme and two other ABM students. Bring an idea for the program, a question about the major, or just come to talk. Lunch is on us. Three spots available.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;"><tr>
-    <td bgcolor="#CC0000" align="center" style="background-color:#CC0000;padding:18px 24px;">
-      <a href="https://docs.google.com/forms/d/1vUqtrJQBqOl7Quh0-9_GUTSvoiBN3Xo75RLdd7KfW7A/viewform" style="display:block;color:#ffffff;text-align:center;font-size:16px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;text-decoration:none;">Sign up for lunch</a>
-    </td>
-  </tr></table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="cover-stories shell" aria-labelledby="usda-heading" style="padding-top:0">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">ABM in action</p>
+          <h2 id="usda-heading">Three ABM students sat down with USDA</h2>
+        </div>
+      </div>
+      <article class="mentor-story alum-card">
+        <div class="image-link">
+          <img src="img/usda.jpg" alt="Mason Hoyle and Brian Rodriguez outside Patterson Hall" width="720" height="960" style="object-position:center 30%">
+        </div>
+        <div class="mentor-copy">
+          <p class="card-label">USDA roundtable &middot; Patterson Hall &middot; Oct. 21</p>
+          <h3>This time Washington came to campus</h3>
+          <p>On October 21, the USDA Office of Partnerships and Public Engagement visited NC State and asked for a student panel. Mason Hoyle, Brian Rodriguez, and Thomas Castillo spent an hour in Patterson Hall with USDA staff talking about student perspectives on agriculture, career pathways, and leadership, the issues facing young people in rural communities, and what they want to see from USDA next. Brian pressed them on support for land-grant universities and Extension, youth engagement, and federal relief for western North Carolina, including the new fuel relief program.</p>
+          <blockquote>&ldquo;Advocacy is a two-way street. It requires us to be willing to speak up for our communities when we go to DC, but also to build relationships where decision-makers are willing to listen when they come to NC State.&rdquo;<small>Brian Rodriguez, ABM</small></blockquote>
+          <p class="card-label" style="margin-top:6px">Pictured: Mason Hoyle and Brian Rodriguez outside Patterson Hall</p>
+        </div>
+      </article>
+    </section>
 
-<!-- Meet Your People: Elena -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Meet your people</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Elena Wigglesworth pitched her business from a balcony and won</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-top:14px;">
-    <img src="img/elena-check.jpg" width="360" alt="Elena Wigglesworth holding a $500 check from NC State Entrepreneurship" style="display:block;width:360px;max-width:100%;height:auto;border:0;">
-    <div style="font-size:12px;line-height:17px;color:#777777;margin-top:6px;">Elena with the Minute to Pitch It check, Talley Student Union, September 17.</div>
-  </td></tr></table>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Afraid of heights? Elena Wigglesworth isn't. At Entrepalooza's Minute to Pitch It in September, she found out the stage was a balcony 12 feet above the judges. She went second and won $500 for Roots Up Wellness, her plan to bring yoga, fitness classes, and retreats to farms and green spaces. On October 22 she pitched it to Canadian billionaire Ronnen Harary, and she's now in the running for the final round in December, with $25,000 at stake. Minute to Pitch It is run by NC State Entrepreneurship, which helps any student turn an idea into a venture; start with Kenneth Proseus, kpproseu@ncsu.edu.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;Start now!&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Elena Wigglesworth, ABM &rsquo;28, on starting a business as a student</div>
-  </td></tr></table>
-  <div style="margin-top:10px;"><a href="https://jtreme.github.io/abm-news/issue-1/elena-wigglesworth/" style="color:#CC0000;font-weight:bold;font-size:15px;">Read Matt Smith's full story on Elena &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="people-feature" aria-labelledby="afa-heading">
+      <div class="shell">
+        <div class="people-intro">
+          <div>
+            <p class="kicker kicker-light">ABM in action</p>
+            <h2 id="afa-heading">15 ABM students are headed to Kansas City</h2>
+          </div>
+          <p>The AFA Leaders Conference (Nov. 12&ndash;15) is a leadership and career conference for students headed into food and agriculture. NC State is sending 61 students this year, its largest group ever. Nithin Gudderra is on AFA&rsquo;s Student Advisory Team and recruited many of the attendees.</p>
+        </div>
+        <ul class="names">
+          <li>Braden Armstrong</li><li>Grace Bailey</li><li>Elizabeth Bennett</li><li>Daniel Davalos-Martinez</li><li>Cynthia DeVine</li><li>Nithin Gudderra</li><li>Andrew Henderson</li><li>Nia Long</li><li>Paige Meadows</li><li>Shannon Purnama</li><li>Jacob Rase</li><li>Brian Rodriguez</li><li>Dylan Rueda Ibanez</li><li>Preston Sharp</li><li>Brett Wimberly</li>
+        </ul>
+        <a class="afa-quote" href="afa-leaders-conference/">
+          <span>&ldquo;I was born in Kansas City, and AFA and NC State have come together to let me go back, not as a tourist, but as an upcoming business professional.&rdquo;</span>
+          <small>Grace Bailey, ABM &rsquo;27, ABM Ambassador &middot; More from the AFA group &rarr;</small>
+        </a>
+      </div>
+    </section>
 
-<!-- Meet Your People: Brandon -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Meet your people</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Brandon Estevez is presenting at the Spooky Research Slam</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Thursday, Oct. 29, 4:30&ndash;6 p.m., Fishbowl Forum, Hill Library. Brandon's talk is "Ripe for Disaster: Where the Avocado Supply Chain Breaks." His argument: cheap, always-in-stock avocados hide how fragile the system behind them is, from deforestation and cartel violence in Mexico to a handful of USDA inspectors at the border. He's building a model to put a dollar figure on a disruption. The project is self-directed through the Office of Undergraduate Research, with Dr. Kelsey Vourazeris as mentor, and it's the first in a series he plans on supply chain fragility.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;If you eat an avocado here in North Carolina, it was likely grown by farmers 2,000 miles away you'll never meet.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Brandon Estevez, ABM</div>
-  </td></tr></table>
-  <div style="margin-top:10px;"><a href="https://jtreme.github.io/abm-news/issue-1/brandon-estevez/" style="color:#CC0000;font-weight:bold;font-size:15px;">Read the full Q&amp;A with Brandon &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="cover-stories shell" aria-labelledby="im-heading">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">ABM in action</p>
+          <h2 id="im-heading">Game day is part of the weekly rhythm now</h2>
+        </div>
+      </div>
+      <article class="mentor-story alum-card">
+        <a class="image-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfbftfb5R3XLGgNdVpFE2dww9Ybad10tobOp1_UHpcLvPcT8g/viewform">
+          <img src="img/volleyball.jpg" alt="The ABM volleyball team" width="720" height="960" style="object-position:center 40%">
+        </a>
+        <div class="mentor-copy">
+          <p class="card-label">ABM intramurals</p>
+          <h3>They lost by a lot and kept showing up</h3>
+          <p>ABM sponsored three intramural teams this fall (flag football, indoor volleyball, basketball), rosters have more than doubled since the program started last spring, and classmates who knew each other only by face are lining up class schedules and trading internship tips between games. The volleyball team&rsquo;s first game was against last year&rsquo;s champions. They lost by a lot and kept showing up.</p>
+          <p>Spring adds 7-on-7 soccer as a full-season team, plus pickleball and kickball tournaments and trivia for anyone who can&rsquo;t commit to a season. No experience, no fees.</p>
+          <p class="card-label">The ABM volleyball team, fall 2026. Back: Alec, Grace, Jacob. Front: Delaney, Alexis, Connor.</p>
+          <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfbftfb5R3XLGgNdVpFE2dww9Ybad10tobOp1_UHpcLvPcT8g/viewform">Spring intramural interest form <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <div class="two-up">
+        <div class="quote-box"><span>&ldquo;I wanted to get involved and meet new people while doing something I liked. What I got out of it: being able to work together with strangers will take you a lot further than just being good at something on your own.&rdquo;</span><small>Connor Jackson, ABM freshman</small></div>
+        <div class="quote-box"><span>&ldquo;I joined volleyball because I never played sports. I wanted a fun way to connect with others while disconnecting from the pressure of academics. Every time someone makes a good shot, the other teammates vocalize encouragement. It really brought us together.&rdquo;</span><small>Stephanie Merritt, ABM junior and transfer student</small></div>
+      </div>
+    </section>
 
-<!-- ABM in Action: DC -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">ABM in action</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">30 ABM students took the DC Learning Journey</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-top:14px;">
-    <img src="img/capitol.jpg" width="360" alt="ABM students on the steps of the U.S. Capitol" style="display:block;width:360px;max-width:100%;height:auto;border:0;">
-    <div style="font-size:12px;line-height:17px;color:#777777;margin-top:6px;">ABM students on the Capitol steps, Washington, D.C., October 2026.</div>
-  </td></tr></table>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Thirty ABM students spent September 30&ndash;October 3 in Washington, D.C., meeting the people who shape agricultural policy. Their conversations took them from congressional offices and USDA to meetings with Farm Bureau and industry advocates at the Capitol Hill Club. They met Senate and House Agriculture Committee staff, North Carolina congressional offices, and Senator Ted Budd.</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:12px;">One of ABM's High-Impact Experiences, the trip was offered at no cost to students and organized by the Office of Student Mentoring board. Board member Justin Somers led the group, joined by board members Nelson Powell and Peter Thornton, with Madi Varron coordinating logistics. The next DC Learning Journey is planned for fall 2027.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;The DC Learning Journey didn&rsquo;t just expose me to a career path in policy, it lit a fire in me to keep learning and push myself.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Mason Hoyle, ABM</div>
-  </td></tr></table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="cover-stories shell" aria-labelledby="wia-heading" style="padding-top:0">
+      <article class="feature-card">
+        <div class="copy">
+          <p class="card-label">Meet your people &middot; Women in Agribusiness</p>
+          <h3 id="wia-heading">Women in Ag started this fall, and it&rsquo;s already three meetings in</h3>
+          <p>ABM students built it from scratch: a kickoff where members set the group&rsquo;s direction, an internship night where students explained how they landed theirs, and an election for the first officer team. It&rsquo;s open to all women in agriculture. This spring they&rsquo;ll host a roundtable with industry professionals on how to thrive in a male-dominated field.</p>
+        </div>
+        <div class="feature-quote dark">
+          <span>Watch for the November meeting.</span>
+          <small>Questions go to the new president, ABM senior Madison Martin</small>
+        </div>
+      </article>
+    </section>
 
-<!-- ABM in Action: USDA roundtable -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">ABM in action</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Three ABM students sat down with USDA</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-top:14px;">
-    <img src="img/usda.jpg" width="360" alt="Mason Hoyle and Brian Rodriguez on the steps of Patterson Hall" style="display:block;width:360px;max-width:100%;height:auto;border:0;">
-    <div style="font-size:12px;line-height:17px;color:#777777;margin-top:6px;">Mason Hoyle and Brian Rodriguez outside Patterson Hall after the USDA roundtable, October 21.</div>
-  </td></tr></table>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">This time Washington came to campus. On October 21, the USDA Office of Partnerships and Public Engagement visited NC State and asked for a student panel. Mason Hoyle, Brian Rodriguez, and Thomas Castillo spent an hour in Patterson Hall with USDA staff talking about student perspectives on agriculture, career pathways, and leadership, the issues facing young people in rural communities, and what they want to see from USDA next. Brian pressed them on support for land-grant universities and Extension, youth engagement, and federal relief for western North Carolina, including the new fuel relief program.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;Advocacy is a two-way street. It requires us to be willing to speak up for our communities when we go to DC, but also to build relationships where decision-makers are willing to listen when they come to NC State.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Brian Rodriguez, ABM</div>
-  </td></tr></table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="opportunities" aria-labelledby="opportunities-heading">
+      <div class="shell">
+        <div class="opportunity-heading">
+          <div>
+            <p class="kicker kicker-light">Apply, compete, lead</p>
+            <h2 id="opportunities-heading">Your next move</h2>
+          </div>
+          <a class="section-link" href="../internships/">See every open opportunity <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="opportunity-grid next-grid">
+          <article class="opportunity-card">
+            <p class="card-label">Summer in D.C. &middot; Due Dec. 1</p>
+            <h3>Helms/OSM Policy Scholarship internship</h3>
+            <p>A summer in a congressional office in Washington, D.C., working on national ag policy, advocacy, and constituent communications, with a $5,000 stipend. Application, three short essays, and two recommendation letters due December 1. Don&rsquo;t overlook this one.</p>
+            <a href="http://go.ncsu.edu/helms-internship">Apply at go.ncsu.edu/helms-internship <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="opportunity-card">
+            <p class="card-label">Spring UTAs &middot; Due Fri., Nov. 6</p>
+            <h3>Be a UTA in spring</h3>
+            <p>Remember the person who helped you finally understand something in class? You could be that person for someone else. UTAs sit in on class, run review sessions, and work alongside faculty, and it counts as one of ABM&rsquo;s High-Impact Experiences. Tell us which course or courses you want; you need to have taken them and done well.</p>
+            <a href="https://docs.google.com/forms/d/14N1MlV3MVDNqoB9rtFS-jl3ryymCbe0JO7kfYe9gNio/viewform">Apply to be a UTA <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="opportunity-card">
+            <p class="card-label">Your call &middot; Fri., Oct. 30, 12&ndash;1</p>
+            <h3>Lunch with Dr. Treme</h3>
+            <p>Have lunch with Dr. Treme and two other ABM students. Bring an idea for the program, a question about the major, or just come to talk. Lunch is on us. Three spots available.</p>
+            <a href="https://docs.google.com/forms/d/1vUqtrJQBqOl7Quh0-9_GUTSvoiBN3Xo75RLdd7KfW7A/viewform">Sign up for lunch <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- ABM in Action: AFA -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">ABM in action</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">15 ABM students are headed to Kansas City</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">The AFA Leaders Conference (Nov. 12&ndash;15) is a leadership and career conference for students headed into food and agriculture. NC State is sending 61 students this year, its largest group ever. Fifteen are ABM students: Braden Armstrong, Grace Bailey, Elizabeth Bennett, Daniel Davalos-Martinez, Cynthia DeVine, Nithin Gudderra, Andrew Henderson, Nia Long, Paige Meadows, Shannon Purnama, Jacob Rase, Brian Rodriguez, Dylan Rueda Ibanez, Preston Sharp, and Brett Wimberly. Nithin Gudderra is on AFA's Student Advisory Team and recruited many of the attendees.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;I was born in Kansas City, and AFA and NC State have come together to let me go back, not as a tourist, but as an upcoming business professional.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Grace Bailey, ABM &rsquo;27, ABM Ambassador</div>
-  </td></tr></table>
-  <div style="margin-top:10px;"><a href="https://jtreme.github.io/abm-news/issue-1/afa-leaders-conference/" style="color:#CC0000;font-weight:bold;font-size:15px;">More from the AFA group &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
+    <section class="reference shell" aria-labelledby="reference-heading">
+      <div class="reference-grid">
+        <div>
+          <div class="section-heading small-heading">
+            <p class="kicker">Stay in the loop</p>
+            <h2 id="reference-heading">Follow ABM on Instagram</h2>
+          </div>
+          <div class="insta">
+            <h3>@ncstateabm</h3>
+            <p>The photos, the people, and what&rsquo;s happening around the major.</p>
+            <a href="https://www.instagram.com/ncstateabm/">instagram.com/ncstateabm <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <aside class="calendar" aria-labelledby="calendar-heading">
+          <p class="kicker">On your calendar</p>
+          <h2 id="calendar-heading">Coming up in ABM</h2>
+          <ol>
+            <li><time datetime="2026-10-29"><b>Oct. 29</b><span>Thu</span></time><p>Agribusiness Career Connections, Nelson Hall, 10 a.m.&ndash;2 p.m.</p></li>
+            <li><time datetime="2026-10-29"><b>Oct. 29</b><span>Thu</span></time><p>Fall Spooky Research Slam, 4:30&ndash;6 p.m., Fishbowl Forum, Hill Library (Brandon Estevez presents)</p></li>
+            <li><time datetime="2026-10-30"><b>Oct. 30</b><span>Fri</span></time><p>Lunch with Dr. Treme, 12&ndash;1 (limit three)</p></li>
+            <li><time datetime="2026-11-06"><b>Nov. 6</b><span>Fri</span></time><p>UTA applications due</p></li>
+            <li><time datetime="2026-11-12"><b>Nov. 12</b><span>Thu</span></time><p>AFA Leaders Conference, Kansas City, through Nov. 15</p></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-<!-- ABM in Action: Intramurals -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">ABM in action</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">ABM intramurals</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding-top:14px;">
-    <img src="img/volleyball.jpg" width="360" alt="ABM intramural volleyball team on the court at Carmichael" style="display:block;width:360px;max-width:100%;height:auto;border:0;">
-    <div style="font-size:12px;line-height:17px;color:#777777;margin-top:6px;">The ABM volleyball team, fall 2026. Back: Alec, Grace, Jacob. Front: Delaney, Alexis, Connor.</div>
-  </td></tr></table>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Game day is part of the weekly rhythm now. ABM sponsored three intramural teams this fall (flag football, indoor volleyball, basketball), rosters have more than doubled since the program started last spring, and classmates who knew each other only by face are lining up class schedules and trading internship tips between games. The volleyball team's first game was against last year's champions. They lost by a lot and kept showing up. Spring adds 7-on-7 soccer as a full-season team, plus pickleball and kickball tournaments and trivia for anyone who can't commit to a season. No experience, no fees.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;I wanted to get involved and meet new people while doing something I liked. What I got out of it: being able to work together with strangers will take you a lot further than just being good at something on your own.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Connor Jackson, ABM freshman</div>
-  </td></tr></table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;line-height:22px;color:#1a1a1a;font-style:italic;">&ldquo;I joined volleyball because I never played sports. I wanted a fun way to connect with others while disconnecting from the pressure of academics. Every time someone makes a good shot, the other teammates vocalize encouragement. It really brought us together.&rdquo;</div>
-    <div style="font-size:13px;color:#555555;margin-top:6px;">Stephanie Merritt, ABM junior and transfer student</div>
-  </td></tr></table>
-  <div style="margin-top:10px;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfbftfb5R3XLGgNdVpFE2dww9Ybad10tobOp1_UHpcLvPcT8g/viewform" style="color:#CC0000;font-weight:bold;font-size:15px;">Spring intramural interest form &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
-
-<!-- Meet Your People: Women in Ag -->
-<tr><td style="padding:22px 28px 0 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Meet your people</div>
-  <div style="font-size:22px;font-weight:bold;line-height:27px;margin-top:5px;">Women in Ag started this fall, and it's already three meetings in</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">ABM students built it from scratch: a kickoff where members set the group's direction, an internship night where students explained how they landed theirs, and an election for the first officer team. It's open to all women in agriculture. This spring they'll host a roundtable with industry professionals on how to thrive in a male-dominated field. Watch for the November meeting. Questions go to the new president, ABM senior Madison Martin, mlmarti9@ncsu.edu.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-</td></tr>
-
-<!-- Coming Up -->
-<tr><td style="padding:22px 28px 28px 28px;">
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;">Coming up</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:8px;font-size:15px;line-height:22px;color:#333333;">
-    <tr><td width="110" valign="top" style="font-weight:bold;padding:6px 0;color:#1a1a1a;">Thu Oct 29</td><td valign="top" style="padding:6px 0;">Agribusiness Career Connections, Nelson Hall, 10 a.m.&ndash;2 p.m.</td></tr>
-        <tr><td width="110" valign="top" style="font-weight:bold;padding:6px 0;color:#1a1a1a;">Thu Oct 29</td><td valign="top" style="padding:6px 0;">Fall Spooky Research Slam, 4:30&ndash;6 p.m., Fishbowl Forum, Hill Library (Brandon Estevez presents)</td></tr>
-<tr><td width="110" valign="top" style="font-weight:bold;padding:6px 0;color:#1a1a1a;">Fri Oct 30</td><td valign="top" style="padding:6px 0;">Lunch with Dr. Treme, 12&ndash;1 (limit three)</td></tr>
-            <tr><td width="110" valign="top" style="font-weight:bold;padding:6px 0;color:#1a1a1a;">Fri Nov 6</td><td valign="top" style="padding:6px 0;">UTA applications due</td></tr>
-    <tr><td width="110" valign="top" style="font-weight:bold;padding:6px 0;color:#1a1a1a;">Nov 12&ndash;15</td><td valign="top" style="padding:6px 0;">AFA Leaders Conference, Kansas City</td></tr>
-  </table>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-bottom:1px solid #d9d9d9;font-size:0;line-height:0;padding-top:22px;">&nbsp;</td></tr></table>
-  <div style="font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#CC0000;margin-top:22px;">Stay in the loop</div>
-  <div style="font-size:15px;line-height:22px;color:#333333;margin-top:6px;">Follow <b>@ncstateabm</b> on Instagram for the photos, the people, and what's happening around the major.</div>
-  <div style="margin-top:8px;"><a href="https://www.instagram.com/ncstateabm/" style="color:#CC0000;font-weight:bold;font-size:15px;">instagram.com/ncstateabm &rsaquo;</a></div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;"><tr><td bgcolor="#f3f3f3" style="background-color:#f3f3f3;border-left:6px solid #CC0000;padding:14px 18px;">
-    <div style="font-size:15px;font-weight:bold;color:#1a1a1a;">That's the Drop.</div>
-    <div style="font-size:13px;line-height:19px;color:#555555;margin-top:5px;">Every issue and every full story: <a href="https://go.ncsu.edu/abm-news" style="color:#CC0000;font-weight:bold;">go.ncsu.edu/abm-news</a>. Got a photo, a win, or a tip for the next issue? Send it to Matt Smith, mgsmit25@ncsu.edu</div>
-  </td></tr></table>
-</td></tr>
-
-</table>
-
-</td></tr>
-</table>
-
-<a class="back" href="https://jtreme.github.io/abm-news/">&lsaquo; All issues</a>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <p class="kicker kicker-light">That&rsquo;s the Drop.</p>
+        <h2>People, possibilities, and what&rsquo;s next.</h2>
+      </div>
+      <div>
+        <p>Every issue and every full story: <a href="https://go.ncsu.edu/abm-news">go.ncsu.edu/abm-news</a>.</p>
+        <p>Got a photo, a win, or a tip? Send it to Matt Smith at <a href="mailto:mgsmit25@ncsu.edu">mgsmit25@ncsu.edu</a>.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="../">All issues</a>
+        <a href="../advising/">Advising</a>
+        <a href="../internships/">Opportunities</a>
+        <a href="email.html">Email edition</a>
+      </nav>
+    </div>
+  </footer>
 <script data-goatcounter="https://jtreme.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

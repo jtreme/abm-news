@@ -46,6 +46,18 @@
 .kelsey-spot{padding-top:76px!important}.kelsey-spot .mentor-copy{align-self:center}.kelsey-spot .alum-card{grid-template-columns:minmax(220px,.62fr) 1.38fr}
 @media (min-width:1001px){.deadline-grid{grid-template-columns:1fr 1fr!important}.deadline-card{min-height:225px!important}}
 .wia-card{background:#CC0000!important;color:#fff!important}.wia-card .card-label{color:#ffd9d9!important}.wia-card strong,.wia-card b{color:#fff!important}.wia-card>span:not(.card-label){color:#fff!important}.wia-card:hover,.wia-card:focus-visible{background:#990000!important}
+.d4-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.d4-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid #d0d0d0}
+.d4-date{flex:0 0 96px;align-self:flex-start;background:var(--black);color:#fff;text-align:center;padding:12px 6px 13px}
+.d4-date.d4-red{background:var(--red)}
+.d4-date span{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.d4-date b{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:40px;line-height:1.05;font-weight:900}
+.d4-text h3{margin:0;font-family:"Roboto Slab",Georgia,serif;font-size:clamp(20px,1.9vw,24px);line-height:1.2}
+.d4-text p{margin:8px 0 0;font-size:16px;line-height:1.5;color:#333}
+.d4-links{display:flex;flex-wrap:wrap;gap:6px 22px}
+.d4-links a{color:var(--red);font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.d4-links a:hover{text-decoration:underline}
+@media (max-width:900px){.d4-grid{grid-template-columns:1fr}.d4-date{flex-basis:84px}.d4-date b{font-size:34px}}
 .photo-by{font-size:12.5px;color:#666;margin:10px 0 0}
 @media (min-width:821px) and (max-width:1180px){.masthead::before{background:linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.74) 46%,rgba(0,0,0,.28) 66%,rgba(0,0,0,0) 80%)!important}.masthead-grid>*{max-width:520px}}
 @media (max-width:1000px){.picks-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
@@ -98,33 +110,38 @@
           <h2 id="act-now-heading">Dates you should not miss</h2>
         </div>
       </div>
-      <div class="deadline-grid">
-        <a class="deadline-card wia-card" href="https://linktr.ee/womeninabm" target="_blank" rel="noopener">
-          <span class="card-label">This Thursday &middot; Nov. 19 &middot; 6&ndash;7 p.m.</span>
-          <strong>Learn how to nail the interview</strong>
-          <span>The last Women in ABM meeting of the semester covers how to present yourself, how to answer &ldquo;tell me about yourself,&rdquo; and how to stand out. You will leave with feedback. Nelson 2210. Open to everyone, and no RSVP is needed.</span>
-          <b>Follow Women in ABM <span aria-hidden="true">→</span></b>
-        </a>
-
-        <a class="deadline-card deadline-card-dark" href="https://go.ncsu.edu/helms-internship">
-          <span class="card-label">Due Dec. 1</span>
-          <strong>Paid summer policy internship in Washington, D.C.</strong>
-          <span>The Helms/OSM Policy Scholarship places you in a congressional office with a $5,000 stipend. Application, three short essays, and two letters.</span>
-          <b>Apply <span aria-hidden="true">→</span></b>
-        </a>
-
-        <a class="deadline-card" href="../internships/#p-service">
-          <span class="card-label">Opens Nov. 19 · Due Jan. 20</span>
-          <strong>Service trips to the Philippines and Madagascar</strong>
-          <span>Alternative Service Break opens applications Thursday for two May 2027 trips: the Philippines, to work on hunger and sustainable agriculture, and Madagascar, to build homes. Travel awards help with the cost.</span>
-          <b>See trips <span aria-hidden="true">→</span></b>
-        </a>
-
-        <div class="deadline-card">
-          <span class="card-label">Both open Dec. 1</span>
-          <strong>Scholarships and state internships</strong>
-          <span>PACK ASSIST is one application for hundreds of NC State scholarships. State government internships pay $15 an hour for 10 weeks.</span>
-          <span class="two-links"><a href="https://go.ncsu.edu/PACKASSIST"><b>PACK ASSIST <span aria-hidden="true">→</span></b></a><a href="../internships/#o-state-nc"><b>State internships <span aria-hidden="true">→</span></b></a></span>
+      <div class="d4-grid">
+        <div class="d4-item">
+          <div class="d4-date d4-red"><span>Thursday</span><b>19</b><span>Nov</span></div>
+          <div class="d4-text">
+            <h3>Learn how to nail the interview</h3>
+            <p>The last Women in ABM meeting of the semester covers how to present yourself, how to answer &ldquo;tell me about yourself,&rdquo; and how to stand out. You will leave with feedback. <span style="white-space:nowrap">6&ndash;7 p.m.</span>, Nelson 2210. Open to everyone, and no RSVP is needed.</p>
+            <p class="d4-links"><a href="https://linktr.ee/womeninabm" target="_blank" rel="noopener">Follow Women in ABM <span aria-hidden="true">→</span></a></p>
+          </div>
+        </div>
+        <div class="d4-item">
+          <div class="d4-date "><span>Due</span><b>1</b><span>Dec</span></div>
+          <div class="d4-text">
+            <h3>Paid summer policy internship in Washington, D.C.</h3>
+            <p>The Helms/OSM Policy Scholarship places you in a congressional office with a $5,000 stipend. Application, three short essays, and two letters.</p>
+            <p class="d4-links"><a href="https://go.ncsu.edu/helms-internship" target="_blank" rel="noopener">Apply <span aria-hidden="true">→</span></a></p>
+          </div>
+        </div>
+        <div class="d4-item">
+          <div class="d4-date "><span>Opens</span><b>1</b><span>Dec</span></div>
+          <div class="d4-text">
+            <h3>Scholarships and state internships</h3>
+            <p>PACK ASSIST is one application for hundreds of NC State scholarships. State government internships pay $15 an hour for 10 weeks.</p>
+            <p class="d4-links"><a href="https://go.ncsu.edu/PACKASSIST" target="_blank" rel="noopener">PACK ASSIST <span aria-hidden="true">→</span></a><a href="../internships/#o-state-nc">State internships <span aria-hidden="true">→</span></a></p>
+          </div>
+        </div>
+        <div class="d4-item">
+          <div class="d4-date "><span>Due</span><b>20</b><span>Jan</span></div>
+          <div class="d4-text">
+            <h3>Service trips to the Philippines and Madagascar</h3>
+            <p>Alternative Service Break opens applications Thursday for two May 2027 trips: the Philippines, to work on hunger and sustainable agriculture, and Madagascar, to build homes. Travel awards help with the cost.</p>
+            <p class="d4-links"><a href="../internships/#p-service">See trips <span aria-hidden="true">→</span></a></p>
+          </div>
         </div>
       </div>
     </section>

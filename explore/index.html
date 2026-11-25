@@ -152,6 +152,32 @@ details[open]{background:#fafafa;padding:4px 14px 10px;margin:0 -14px}
 .go.alt:hover{background:var(--red)}
 .body a{color:var(--red);font-weight:700}
 @media (max-width:760px){.ex-facts,.cards{grid-template-columns:1fr}}
+.xp{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:14px 0 8px}
+.xp article{background:var(--paper);display:flex;flex-direction:column}
+.xp img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.xp .tx{padding:14px 16px 16px}
+.xp h3{font-family:"Roboto Slab",Georgia,serif;font-size:20px;line-height:1.15;margin:0 0 6px}
+.xp p{font-size:15px;line-height:1.5;margin:0}
+.tag{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;margin-bottom:8px}
+.tag.alt{background:var(--black)}
+.tag.hiet{background:#fff;color:var(--red);outline:2px solid var(--red);outline-offset:-2px}
+.hie{background:var(--black);color:#ddd;border-left:8px solid var(--red);padding:20px 22px;margin:12px 0 6px}
+.hie b{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:22px;color:#fff;margin-bottom:6px}
+.hie p{color:#ddd;font-size:16px;line-height:1.55;margin:0}
+.diff{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 6px}
+.diff div{border-top:6px solid var(--red);background:var(--paper);padding:14px 16px}
+.diff b{display:block;font-family:"Roboto Slab",Georgia,serif;font-size:19px;line-height:1.15;margin-bottom:6px}
+.diff p{font-size:15px;line-height:1.5;margin:0}
+.wide{width:100%;display:block;margin:12px 0 4px}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.places div{border-left:6px solid var(--red);padding:2px 0 2px 12px}
+.places b{display:block;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.places span{display:block;font-size:15px;line-height:1.5;color:#333}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 0}
+.team div{font-size:14px;line-height:1.4;color:#ddd}
+.team b{display:block;color:#fff;font-size:15px}
+@media (max-width:760px){.xp,.diff,.places,.team{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -192,6 +218,11 @@ details[open]{background:#fafafa;padding:4px 14px 10px;margin:0 -14px}
     <div><b>7</b><span>Provost-designated High-Impact Experiences: teams, workshops, trips and teaching roles</span></div>
   </div>
   <p style="font-size:13px;color:var(--muted)">Salary: NC State CALS graduate outcomes data.</p>
+  <div class="diff">
+    <div><b>Real industry</b><p>Learn from people running ag businesses such as Smithfield, Bayer, AgSouth and JCB, in workshops, internships and mentoring.</p></div>
+    <div><b>Small cohorts</b><p>New students join a small cohort with a faculty advisor who stays with them through the program.</p></div>
+    <div><b>Built-in support</b><p>Planning tools we built, like Paw Plan, plus drop-in advising and peer-led help sessions.</p></div>
+  </div>
 
   <h2 id="study">What you&rsquo;ll study</h2>
   <p>The core covers economics, accounting, marketing, finance, law, policy and analytics. You&rsquo;ll take one calculus course (MA 121) plus MA 114. After a few core economics courses, you choose electives that fit where you want to go.</p>
@@ -201,9 +232,44 @@ details[open]{background:#fafafa;padding:4px 14px 10px;margin:0 -14px}
     <div><b>Agricultural Financial Management</b><p>Learn how lenders and farm businesses make credit and investment decisions.</p></div>
     <div><b>U.S. Agricultural Policy</b><p>See how farm and food policy gets made, and who makes it.</p></div>
   </div>
-  <p><b>New in January 2027:</b> an Entrepreneurship/Marketing concentration for students who want to start a business or work in sales and marketing.</p>
-  <p><b>Outside class:</b> compete on the Quiz Bowl, Marketing and Spreadsheet teams, train in sales and grain markets workshops, travel to Washington, D.C., and work as an undergraduate teaching assistant.</p>
+  <p><b>Specialize your degree.</b> Upper-level electives group into three paths. Pick one, or stack two.</p>
+  <div class="places">
+    <div><b>Entrepreneurship and marketing</b><span>Build a venture and a brand. Becomes a formal concentration in January 2027.</span></div>
+    <div><b>Analytics</b><span>Turn business data into decisions with spreadsheet modeling and Agribusiness Analytics.</span></div>
+    <div><b>Supply chain</b><span>Move products from field to fork: ag markets, supply chain management, commodity trading.</span></div>
+  </div>
+  <p><b>Coming fall 2027: a five-year track</b> to a Master of Agricultural Business Management. Take graduate credits as an undergraduate, count them toward both degrees, and finish the master&rsquo;s in one more year.</p>
   <p><a href="https://catalog.ncsu.edu/undergraduate/agriculture-life-sciences/agricultural-resource-economics/agricultural-business-management-bs/" target="_blank" rel="noopener">Full degree requirements in the university catalog &rsaquo;</a></p>
+
+  <h2 id="outside">Outside the classroom</h2>
+  <div class="hie"><b>What is a High-Impact Experience?</b><p>NC State&rsquo;s Provost designates High-Impact Experiences: structured, hands-on programs where students work on real problems, get feedback from mentors and reflect on what they learned. ABM offers seven of them, marked below.</p></div>
+  <div class="xp">
+    <article><img src="img/aaea.jpg" alt="ABM students at the AAEA annual meeting" loading="lazy"><div class="tx"><span class="tag">Compete</span> <span class="tag hiet">High-Impact Experience</span> <h3>Spreadsheet Analytics Team</h3><p>Build an Excel model for an ag business case you&rsquo;ve never seen, against teams from across the country. First place at the 2026 AAEA national competition.</p></div></article>
+    <article><img src="img/quiz-bowl.jpg" alt="Quiz Bowl travel team in Denver" loading="lazy"><div class="tx"><span class="tag">Compete</span><h3>Quiz Bowl Team</h3><p>A buzzer-style tournament on ag economics, policy and markets at the national AAEA meeting. Open to students in any year.</p></div></article>
+    <article><img src="img/sales-team.jpg" alt="Sales Team at Bayer Crop Science headquarters in St. Louis" loading="lazy"><div class="tx"><span class="tag">Compete</span> <span class="tag hiet">High-Impact Experience</span> <h3>Sales Team</h3><p>Role-play a real ag sales call in front of industry judges. Team trips to Bayer, John Deere and AGCO. Places every year.</p></div></article>
+    <article><img src="img/nama.jpg" alt="NAMA marketing team at the national meeting" loading="lazy"><div class="tx"><span class="tag">Compete</span><h3>NAMA Marketing Team</h3><p>Write a marketing plan for a real ag client and pitch it to industry judges at the National Agri-Marketing Association meeting.</p></div></article>
+    <article><img src="img/dc-usda.jpg" alt="ABM students at USDA in Washington, D.C." loading="lazy"><div class="tx"><span class="tag">Travel</span> <span class="tag hiet">High-Impact Experience</span> <h3>Washington, D.C. trip</h3><p>Meet North Carolina&rsquo;s members of Congress, Agriculture Committee staff, USDA and the industry groups that shape farm policy. Free to students.</p></div></article>
+    <article><div class="tx" style="border-top:6px solid var(--red)"><span class="tag alt">Learn from industry</span> <span class="tag hiet">High-Impact Experience</span> <h3>Grain Markets and Futures workshop</h3><p>A six-week certificate course taught by Matt Parker of Smithfield Foods&rsquo; grain procurement team: market fundamentals, hedging, procurement and negotiation, ending in a market simulation.</p>
+      <div style="margin-top:16px"><span class="tag hiet">High-Impact Experience</span> </div><h3>Agricultural Sales workshop</h3><p>Taught by Aaron Messer of Bayer: how ag sales conversations happen, how to build a client pipeline and how to manage long sales cycles.</p></div></article>
+    <article><div class="tx" style="border-top:6px solid var(--red)"><span class="tag alt">Start strong</span> <span class="tag hiet">High-Impact Experience</span> <h3>ARE 290: Professional Development in ABM</h3><p>A fall course for students new to the major. It lays the professional foundation for the rest of the major: career planning, resumes and interviews, and connections with employers.</p></div></article>
+    <article><div class="tx" style="border-top:6px solid var(--red)"><span class="tag alt">Lead</span> <span class="tag hiet">High-Impact Experience</span> <h3>Undergraduate Teaching Assistants</h3><p>Do well in ARE 201, then apply or get nominated. UTAs lead small-group review sessions, sit with students in large classes and help faculty spot who is struggling. It&rsquo;s one of the strongest references you can earn.</p></div></article>
+    <article><img style="object-position:50% 20%" src="img/awards.jpg" alt="ABM students receiving 2026 CALS awards" loading="lazy"><div class="tx"><span class="tag alt">Lead</span><h3>Ambassadors and awards</h3><p>ABM students won two 2026 CALS awards: the Change Maker Award and Outstanding Leadership. One serves on the national AFA Student Advisory Team.</p></div></article>
+  </div>
+
+  <h2 id="people">Find your people</h2>
+  <p>ABM is big enough to have something for everyone and small enough that faculty and staff know your name.</p>
+  <div class="xp">
+    <article><img src="img/kickball.jpg" alt="ABM kickball team" loading="lazy"><div class="tx"><h3>ABM intramurals</h3><p>Soccer, basketball, volleyball, flag football and kickball. Rosters fill within hours, and no skill is required.</p></div></article>
+    <article><img src="img/carter-finley.jpg" alt="ABM students at Carter-Finley Stadium" loading="lazy"><div class="tx"><h3>Clubs and community</h3><p>The ABM Club, Women in Agribusiness, MANRRS and your advising cohort, plus events all year.</p></div></article>
+  </div>
+
+  <h2 id="where">Where ABM can take you</h2>
+  <div class="places">
+    <div><b>Compete</b><span>Denver &middot; Kansas City &middot; St. Louis &middot; Louisville</span></div>
+    <div><b>Explore</b><span>Washington, D.C. &middot; Savannah &middot; the NC coast and mountains</span></div>
+    <div><b>Go global</b><span>Netherlands Maymester &middot; Texas</span></div>
+  </div>
+  <p><b>Where students intern and work:</b> Smithfield, JCB, John Deere, AgCarolina Farm Credit, BASF, Bayer, PepsiCo, SAS and many more.</p>
 
   <h2 id="in">How to get in</h2>
 
@@ -262,7 +328,8 @@ details[open]{background:#fafafa;padding:4px 14px 10px;margin:0 -14px}
   <h2 id="visit">Visit or talk to us</h2>
   <p>Tour campus through NC State Admissions, then come see Nelson Hall, home of the Department of Agricultural and Resource Economics.</p>
   <a class="go" href="https://admissions.ncsu.edu/visit" target="_blank" rel="noopener">Schedule a campus visit</a>
-  <div class="ask"><b>Questions about ABM?</b>Email Dr. Julianne Treme, Director of Undergraduate Programs, at <a href="mailto:jtreme@ncsu.edu">jtreme@ncsu.edu</a>. We can answer questions about the major, courses and careers, and help set up a visit with the department.</div>
+  <div class="ask"><b>Questions about ABM?</b>Email Dr. Julianne Treme, Director of Undergraduate Programs, at <a href="mailto:jtreme@ncsu.edu">jtreme@ncsu.edu</a>. We can answer questions about the major, courses and careers, and help set up a visit with the department.
+    <div class="team"><div><b>Dr. Julianne Treme</b>Director of Undergraduate Programs</div><div><b>Madi Varron</b>Program Coordinator</div><div><b>Matt Smith</b>Student Engagement and Support Specialist</div></div></div>
 
 </div>
 </div>
@@ -274,6 +341,7 @@ details[open]{background:#fafafa;padding:4px 14px 10px;margin:0 -14px}
       <p>Read <a href="../latest/">The ABM Drop</a>, our student magazine.</p>
     </div>
     <nav aria-label="Footer navigation">
+      <a href="#outside">Outside the classroom</a>
       <a href="#in">How to get in</a>
       <a href="#cost">Cost and aid</a>
       <a href="../latest/">Latest issue</a>

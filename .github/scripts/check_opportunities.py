@@ -117,6 +117,8 @@ def check(url):
 
 FULL_DATE_RE = re.compile(
     r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.? (\d{1,2}),? (202[7-9])\b")
+ANY_DATE_RE = re.compile(
+    r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.? \d{1,2}\b", re.I)
 DEADLINE_WORDS = re.compile(r"deadline|due|apply by|applications? (?:open|close)|priority|submit")
 
 
@@ -127,7 +129,12 @@ def future_deadline(body, today):
             d = dt.date(int(m.group(3)), MONTHS[m.group(1)[:3]], int(m.group(2)))
         except ValueError:
             continue
-        if d > today and DEADLINE_WORDS.search(body[max(0, m.start() - 100):m.start()]):
+        before = body[max(0, m.start() - 100):m.start()]
+        words = list(DEADLINE_WORDS.finditer(before))
+        # The deadline wording must belong to this date: skip it when another
+        # date sits between the wording and this one ("deadline: Nov. 15, 2026
+        # ... program begins: Jan. 11, 2027" is not a 2027 deadline).
+        if d > today and words and not ANY_DATE_RE.search(before[words[-1].end():]):
             return m
     return None
 

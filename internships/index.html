@@ -222,7 +222,6 @@ section[data-type]>h2{font-family:"Roboto Slab",Georgia,serif!important;font-siz
 .op-find .tabs button[aria-selected=true] small{color:#555}
 @media (max-width:640px){.op-find .tabs{grid-template-columns:1fr 1fr}}
 .op-find label.hide{display:none!important}
-.op-find .paynote{color:#bbb;font-size:13px;line-height:19px;margin:12px 0 0;flex:1 1 100%}
 section[data-type]>h2{display:none}
 </style>
 </head>
@@ -260,7 +259,6 @@ section[data-type]>h2{display:none}
       <label>Where<select id="f-loc"><option value="all">Anywhere</option><option value="nc">In North Carolina</option><option value="out">Outside North Carolina</option></select></label>
       <label>Pay<select id="f-pay"><option value="all">Any</option><option value="paid">Pay listed</option></select></label>
     </div>
-      <p class="paynote">No pay listed? Many employers, especially in North Carolina, don&rsquo;t post it. Undergraduate interns nationally average about $23 an hour (NACE, 2026). Ask about pay before you accept an offer.</p>
     </div>
   </div>
 </section>
@@ -626,7 +624,7 @@ section[data-type]>h2{display:none}
   }
   t.value='i';var hs=location.hash.slice(1);if(hs==='internships')t.value='i';if(hs==='jobs')t.value='j';if(hs==='programs'||hs==='scholarships')t.value='p';if(hs==='orgs')t.value='o';
   var fl=[c,L,P].map(function(x){return x.closest('label')});
-  function sync(){ var na=(t.value==='p'||t.value==='o'); fl.forEach(function(x){x.style.display=na?'none':''});var pn=document.querySelector('.paynote');if(pn)pn.style.display=na?'none':''; if(na){c.value='all';L.value='all';P.value='all';} }
+  function sync(){ var na=(t.value==='p'||t.value==='o'); fl.forEach(function(x){x.style.display=na?'none':''}); if(na){c.value='all';L.value='all';P.value='all';} }
   [].slice.call(document.querySelectorAll('.stages button[data-s]')).forEach(function(b){
     b.addEventListener('click',function(){
       var open=!b.classList.contains('on');

@@ -624,7 +624,7 @@ section[data-type]>h2{display:none}
     });
     n.textContent=total?('Showing '+total+(total===1?' listing':' listings')):'Nothing matches those filters right now. Check back, or change a filter.';
   }
-  t.value='i';var hs=location.hash.slice(1);if(hs==='internships')t.value='i';if(hs==='jobs')t.value='j';if(hs==='programs')t.value='p';if(hs==='orgs')t.value='o';
+  t.value='i';var hs=location.hash.slice(1);if(hs==='internships')t.value='i';if(hs==='jobs')t.value='j';if(hs==='programs'||hs==='scholarships')t.value='p';if(hs==='orgs')t.value='o';
   var fl=[c,L,P].map(function(x){return x.closest('label')});
   function sync(){ var na=(t.value==='p'||t.value==='o'); fl.forEach(function(x){x.style.display=na?'none':''});var pn=document.querySelector('.paynote');if(pn)pn.style.display=na?'none':''; if(na){c.value='all';L.value='all';P.value='all';} }
   [].slice.call(document.querySelectorAll('.stages button[data-s]')).forEach(function(b){
@@ -675,7 +675,7 @@ section[data-type]>h2{display:none}
   t.addEventListener('change',function(){sync();run();jump();});[c,L,P].forEach(function(x){x.addEventListener('change',function(){run();jump();});});
   [].slice.call(document.querySelectorAll('a.tofin')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();t.value='i';c.value='fin';L.value='all';P.value='all';sync();run();tabsync();jump();});});sync();run();
 
-  var TB=[].slice.call(document.querySelectorAll('.tabs button')),LH=document.getElementById('list-h'),HN={i:'internships',j:'jobs',p:'programs',o:'orgs'};
+  var TB=[].slice.call(document.querySelectorAll('.tabs button')),LH=document.getElementById('list-h'),HN={i:'internships',j:'jobs',p:'scholarships',o:'orgs'};
   function tabsync(){TB.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===t.value?'true':'false')});var on=TB.filter(function(b){return b.dataset.t===t.value})[0];if(LH)LH.textContent=on?on.childNodes[0].textContent.trim():'Every listing';}
   TB.forEach(function(b){b.addEventListener('click',function(){t.value=b.dataset.t;sync();run();tabsync();try{history.replaceState(null,'','#'+HN[t.value])}catch(e){}})});
   t.addEventListener('change',tabsync);tabsync();

@@ -681,6 +681,14 @@ section[data-type]>h2{display:none}
   function openHash(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(!el||el.tagName==='SECTION')return;var sec=el.closest('section[data-type]');if(!sec)return;
     t.value=sec.dataset.type;c.value='all';L.value='all';P.value='all';sync();run();tabsync();var d=el.closest('details');if(d)d.open=true;setTimeout(function(){el.scrollIntoView();},0);}
   window.addEventListener('hashchange',openHash);openHash();
+
+  // Interest tracking (GoatCounter events: counts only, no cookies, no personal data)
+  var TN={i:'internships',j:'jobs',p:'scholarships',o:'clubs'};
+  function gcEvent(path,title){var n=0;(function go(){if(window.goatcounter&&window.goatcounter.count){try{window.goatcounter.count({path:path,title:title,event:true})}catch(e){}}else if(n++<20){setTimeout(go,500)}})();}
+  (function(){var h=location.hash.slice(1),k={internships:'internships',jobs:'jobs',programs:'scholarships',scholarships:'scholarships',orgs:'clubs'}[h];gcEvent('arrive-'+(k||(h?'listing-link':'page')),'Arrived: '+(k||(h?'link to one listing':'main page')));})();
+  TB.forEach(function(b){b.addEventListener('click',function(){gcEvent('tab-'+TN[b.dataset.t],'Tab: '+TN[b.dataset.t]);});});
+  document.addEventListener('click',function(e){var a=e.target.closest('section[data-type] .job a[href]');if(!a)return;var sec=a.closest('section[data-type]'),job=a.closest('.job'),t=job.querySelector('.t');var name=t?t.childNodes[0].textContent.trim():'';var org=(job.querySelector('.m')||{}).textContent||'';org=org.split('\u00b7')[0].trim();
+    gcEvent('apply-'+TN[sec.dataset.type],'Apply click: '+TN[sec.dataset.type]);gcEvent('apply-'+TN[sec.dataset.type]+'-'+(job.id||(org+' '+name).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60)),'Apply: '+(org?org+' | ':'')+name);});
   var st=document.getElementById('st-total'); if(st) st.textContent=document.querySelectorAll('.job').length;
   (function(){var now=new Date(),shown=0;[].slice.call(document.querySelectorAll('[data-until]')).forEach(function(c){var d=new Date(c.getAttribute('data-until')+'T23:59:59');if(d<now)c.parentNode.removeChild(c);else shown++;});
     var g=document.querySelector('.feat-grid');if(g&&!g.children.length)g.parentNode.removeChild(g);
